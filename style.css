@@ -1,0 +1,253 @@
+/* Cabeçalho */
+header {
+    text-align:center;
+    color:rgb(255, 255, 255);
+    padding:10px;
+    padding-top: 30px;
+    
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family:monospace;
+    background: linear-gradient(to right, rgb(35, 96, 177), rgb(35, 177, 177));
+}
+
+.nome_pagina {
+    margin-left:30px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    color:black;
+}
+
+body {
+    background-color:rgb(221, 227, 231);
+}
+
+.titulo {
+    font-size: 50px;
+}
+
+.tema {
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    background-color:rgb(12, 12, 63);
+    font-size: 21px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+nav a {
+    height:auto;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 20px 20px;
+}
+
+nav a:hover {
+    background-color:rgb(70, 89, 194);
+
+}
+
+/* Pagina inicial */
+main {
+    background-color:white;
+    margin: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+h2{
+    font-size: 35px;
+    color:rgb(83, 133, 225);
+    font-family:Arial, Helvetica, sans-serif
+}
+
+
+p {
+    font-size: 30px;
+    text-align: justify;
+    color:rgb(60, 62, 75);
+}
+
+mark {
+    background-color: aquamarine;
+}
+
+.container_img {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    height:auto;   
+}
+
+/*veja_mais*/
+
+.veja_mais{
+    background-color:white;
+    margin: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+    /*botao*/
+
+.container_botao {
+    display: flex;
+    gap: 20px;
+}
+
+.botao_voltar {
+    flex: 1;
+    background-color:rgb(15, 106, 209);
+    padding: 20px;
+    font-size: 25px;
+    color:rgb(255, 255, 255);
+    border-radius: 6px;
+    text-decoration: none;
+    text-align:center;
+}
+
+.botao_voltar:hover{
+    background-color:rgb(40, 130, 214);
+    border: solid black 2px;
+}
+
+.p {
+    margin-bottom:0px;
+    flex: 3;
+}
+
+/* problema*/
+.lista_p{
+    font-size: 30px;
+    text-align: justify;
+    color:rgb(60, 62, 75);
+    margin-left:20px;
+}
+
+h3 {
+    color:rgb(19, 19, 119);
+    font-size:32px;
+}
+
+/* footer*/
+footer {
+    display:flex;
+    gap:10px;
+    background-color:rgb(12, 12, 63);
+    color: white;
+    margin: 30px;
+    margin-bottom: 0px;
+    margin-top:10px;
+    padding: 30px;
+    border-radius:10px;
+    color: rgb(49, 49, 182);
+}
+
+.p_footer {
+    color: rgb(49, 49, 182);
+    font-size: 25px;
+}
+
+.link_footer{
+    justify-content:right;
+    flex:0;
+}
+.h3_footer{
+    font-size:30px;
+    color: rgb(49, 49, 182);
+}
+
+.fontes {
+    font-size: 20px;
+    color: rgb(49, 49, 182);
+}
+
+.texto_footer{
+    flex:1;
+}
+
+/*comentario*/
+.comentario {
+    background-color:white;
+    margin: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+label{
+    font-size: 30px;
+    color:rgb(60, 62, 75);
+}
+
+.botao_enviar{
+    font-size:20px;
+}
+
+textarea {
+    width:80%;
+    font-size:20px;
+}
+
+/*sobre*/
+
+.header_rosa{
+    background: linear-gradient(to right, rgb(209, 55, 132), rgb(158, 59, 223));
+}
+
+.h3_rosa {
+    color:rgb(119, 19, 94);
+}
+
+.h2_rosa {
+    margin-top:80px;
+    color:rgb(225, 83, 178);
+}
+
+.container_autora{
+    display:flex;
+    gap: 10%;
+}
+
+.doby_rosa {
+    background-color:rgb(231, 221, 230);
+}
+
+.mudar_rosa {
+    background-color:rgb(75, 14, 75);
+}
+
+.nav_mudar_rosa {
+    background-color:rgb(75, 14, 75);
+}
+
+.nav_mudar_rosa a:hover {
+    background-color:rgb(155, 24, 122);
+}
+
+.p_footer_rosa {
+    color: rgb(161, 30, 161);
+}
+
+.footer_rosa {
+    font-size:20px;
+}
