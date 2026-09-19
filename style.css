@@ -158,11 +158,11 @@ footer {
     margin-top:10px;
     padding: 30px;
     border-radius:10px;
-    color: rgb(49, 49, 182);
+    
 }
 
 .p_footer {
-    color: rgb(49, 49, 182);
+    color: rgb(133, 133, 255);
     font-size: 25px;
 }
 
@@ -172,15 +172,15 @@ footer {
 }
 .h3_footer{
     font-size:30px;
-    color: rgb(49, 49, 182);
+    color: rgb(133, 133, 255);
 }
 
 .fontes {
     font-size: 20px;
-    color: rgb(49, 49, 182);
+    color: rgb(133, 133, 255);
 }
 
-.texto_footer{
+.{
     flex:1;
 }
 
@@ -245,9 +245,14 @@ textarea {
 }
 
 .p_footer_rosa {
-    color: rgb(161, 30, 161);
+    color: rgb(245, 109, 245);
+    font-size:25px;
 }
 
 .footer_rosa {
-    font-size:20px;
+
+}
+
+@media (max-width: 700px) {
+    
 }
