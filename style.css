@@ -4,10 +4,7 @@ header {
     color:rgb(255, 255, 255);
     padding:10px;
     padding-top: 30px;
-    
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family:monospace;
@@ -39,8 +36,7 @@ nav {
     justify-content: center;
     background-color:rgb(12, 12, 63);
     font-size: 21px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -62,9 +58,7 @@ nav a:hover {
 /* Pagina inicial */
 main {
     background-color:white;
-    margin: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-top: 10px;
     padding: 50px;
     border-radius: 10px;
 }
@@ -99,9 +93,7 @@ mark {
 
 .veja_mais{
     background-color:white;
-    margin: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-top: 10px;
     padding: 50px;
     border-radius: 10px;
 }
@@ -152,17 +144,14 @@ footer {
     display:flex;
     gap:10px;
     background-color:rgb(12, 12, 63);
-    color: white;
-    margin: 30px;
-    margin-bottom: 0px;
-    margin-top:10px;
+    margin-top: 10px;
     padding: 30px;
     border-radius:10px;
-    
+    color: rgb(255, 255, 255);
 }
 
 .p_footer {
-    color: rgb(133, 133, 255);
+    color: rgb(255, 255, 255);
     font-size: 25px;
 }
 
@@ -172,24 +161,22 @@ footer {
 }
 .h3_footer{
     font-size:30px;
-    color: rgb(133, 133, 255);
+    color: rgb(255, 255, 255);
 }
 
 .fontes {
     font-size: 20px;
-    color: rgb(133, 133, 255);
+    color: rgb(255, 255, 255);
 }
 
-.{
+.texto_footer{
     flex:1;
 }
 
 /*comentario*/
 .comentario {
     background-color:white;
-    margin: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-top: 10px;
     padding: 50px;
     border-radius: 10px;
 }
@@ -244,15 +231,23 @@ textarea {
     background-color:rgb(155, 24, 122);
 }
 
-.p_footer_rosa {
-    color: rgb(245, 109, 245);
-    font-size:25px;
-}
 
-.footer_rosa {
-
-}
 
 @media (max-width: 700px) {
-    
+    main {
+        padding: 20px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .veja_mais {
+        padding: 20px;
+    }
+    footer {
+        display:list-item;
+    }
+    .container_img {
+        
+    }
 }
