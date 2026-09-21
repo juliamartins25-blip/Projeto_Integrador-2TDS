@@ -1,4 +1,8 @@
 /* Cabeçalho */
+body {
+    background-color:rgb(221, 227, 231);
+}
+
 header {
     text-align:center;
     color:rgb(255, 255, 255);
@@ -11,23 +15,19 @@ header {
     background: linear-gradient(to right, rgb(35, 96, 177), rgb(35, 177, 177));
 }
 
-.nome_pagina {
-    margin-left:30px;
-    margin-bottom: 0px;
-    margin-top: 30px;
-    color:black;
-}
-
-body {
-    background-color:rgb(221, 227, 231);
-}
-
 .titulo {
     font-size: 50px;
 }
 
 .tema {
     font-size: 40px;
+}
+
+.nome_pagina {
+    margin-left: 30px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    color:black;
 }
 
 nav {
@@ -69,7 +69,6 @@ h2{
     font-family:Arial, Helvetica, sans-serif
 }
 
-
 p {
     font-size: 30px;
     text-align: justify;
@@ -86,11 +85,10 @@ mark {
 }
 
 .img {
-    height:auto;   
+    height: auto;
 }
 
 /*veja_mais*/
-
 .veja_mais{
     background-color:white;
     margin-top: 10px;
@@ -232,22 +230,82 @@ textarea {
 }
 
 
-
+/*tela menor*/
 @media (max-width: 700px) {
     main {
         padding: 20px;
     }
+
     nav {
         flex-direction: column;
         gap: 0px;
+        font-size: 18px;
     }
+
+    nav a {
+        padding:10px;
+    }
+
     .veja_mais {
         padding: 20px;
     }
+
     footer {
         display:list-item;
     }
-    .container_img {
-        
+
+    p {
+        font-size: 20px;
+    }
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .tema {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+
+    .lista_p {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 23px;
+    }
+
+    .p_footer {
+        font-size: 20px;
+    }
+
+    .h3_footer {
+        font-size: 23px;
+    }
+
+    .fontes {
+        font-size: 18px;
+    }
+
+    label{
+        font-size: 20px;
+    }
+
+    .botao_enviar{
+        font-size:18px;
+    }
+
+    img {
+        width: 80vmin;
+    }
+
+    .foto_autora {
+        width: 45%;
+    }
+
+    .img_reputacao {
+        width: 40%;
     }
 }
