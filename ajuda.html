@@ -41,29 +41,76 @@
         </section>
     </main>
 
-    <section class="comentario">
-        <p>Deseja fazer algum comentario a respeito do artigo?</p>
-        <form>
-            <label>Comentario:</label><br>
-            <textarea></textarea>
-            <br><br>
-
-            <input type="submit" class="botao_enviar">
-        </form>
-
-        <button id="btn-topo" class="botao_voltar">Voltar ao topo</button>
-    </section>
-
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
-        <form>
-            <label for="clareza">1. As informações estavam claras?</label>
+        <form id="formulario_avaliacao">
+            <label for="clareza">1- As informações estavam claras?</label>
             <select id="clareza">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="pode melhorar">Pode melhorar</option>
+                <option value="não">Não</option>
+            </select>
+            <br>
+
+            <label for="utilidade">2- O conteúdo foi útil?</label>
+            <select id="utilidade">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="pode melhorar">Pode melhorar</option>
+                <option value="não">Não</option>
+            </select>
+            <br>
+
+            <label for="facilidade">3- Foi fácil navegar pela página?</label>
+            <select id="facilidade">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="pode melhorar">Pode melhorar</option>
+                <option value="não">Não</option>
+            </select>
+            <br>
+
+            <label for="organizado">4- A aparência da página estava organizada?</label>
+            <select id="organizado">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="pode melhorar">Pode melhorar</option>
+                <option value="não">Não</option>
+            </select>
+            <br>
+
+            <label for="acessibilidade">5- Os recursos de acessibilidade funcionaram?</label>
+            <select id="acessibilidade">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="pode melhorar">Pode melhorar</option>
+                <option value="não">Não</option>
+            </select>
+            <br>
+
+            <label for="recomendaria">6- Você recomendaria esta página?</label>
+            <select id="recomendaria">
                 <option value="">Selecione</option>
                 <option value="sim">Sim</option>
                 <option value="não">Não</option>
             </select>
+            <br>
+
+            <label for="atencao">7- Qual parte chamou mais atenção?</label>
+            <br>
+            <textarea id="atencao"></textarea>
+            <br>
+
+            <label for="sugestao">8- O que poderia ser melhorado?</label>
+            <br>
+            <textarea id="sugestao"></textarea>
+            <br>
+
+            <button id="btn-enviar">Enviar</button>
         </form>
+
+        <button id="btn-topo" class="botao_voltar">Voltar ao topo</button>
     </section>
      <!--RODAPÉ-->
     <footer>
