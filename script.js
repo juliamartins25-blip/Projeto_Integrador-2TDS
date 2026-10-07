@@ -44,7 +44,7 @@ btnEnviar.addEventListener("click", function(){
     console.log(clareza.value);
     console.log(utilidade.value);
     console.log(facilidade.value);
-    console.log(organizada.value);
+    console.log(organizado.value);
     console.log(acessibilidade.value);
     console.log(recomendaria.value);
     console.log(atencao.value);
