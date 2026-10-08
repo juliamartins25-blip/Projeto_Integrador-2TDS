@@ -40,8 +40,86 @@
             <p>Ou em canais oficiais como o <b>Portal Brasil Contra Fake</b> da Secom: <br> <a href="https://www.gov.br/secom/pt-br/fatos/brasil-contra-fake" target="blank">Portal Brasil Contra Fake</a></p>
         </section>
     </main>
-<!-- adicionar formulario de relatos-->
 
+<!--formulario de relatos e Comentarios-->
+    <section class="relatos-comentarios">
+        <h2>Comentarios e relatos</h2>
+        <h3>Relatos</h3>
+        <form id="form-relatos"></form>
+            <article class="conteudo">
+                <p><b>1. O conteúdo</b></p>
+
+                <label for="resumo">Título ou Resumo:</label>
+                <br>
+                <textarea id="resumo">Uma breve descrição sobre o que a mensagem ou notícia afirmava</textarea>
+                <br>
+
+                <label for="formato">Formato do Conteúdo:</label>
+                <select id="formato">
+                    <option value="">Selecione</option>
+                    <option value="texto">Texto</option>
+                    <option value="imagem">Imagem/Print de tela</option>
+                    <option value="audio">Audio</option>
+                    <option value="video">Video</option>
+                    <option value="link">Link de site</option>
+                    <option value="meme">Memes</option>
+                </select>
+                <br>
+
+                <label for="tema">Tema principal:</label>
+                <select id="tema">
+                    <option value="">Selecione</option>
+                    <option value="saude">Saúde/Vacinas</option>
+                    <option value="politica">Política/Eleições</option>
+                    <option value="ciencia">Ciência</option>
+                    <option value="celebridade">Celebridades/Fofocas</option>
+                    <option value="seguranca">Segurança Pública</option>
+                    <option value="economia">Economia/Golpes</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </article>
+
+            <article class="dimenção">
+                <p><b>2. A Disseminação</b></p>
+
+                <label for="onde-recebeu">Onde você viu ou recebeu?</label>
+                <select id="onde-recebeu">
+                    <option value="">Selecione</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="telegram">Telegram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="ticktok">TikTok</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="youtube">YouTube</option>
+                    <option value="boca">Boca a boca</option>
+                    <option value="site">Site de notícias falso</option>
+                </select>
+                <br>
+
+                <label for="quem-compartilhou">Quem compartilhou com você?</label>
+                <select id="quem-compartilhou">
+                    <option value="">Selecione</option>
+                    <option value="familiar">Familiar</option>
+                    <option value="amigo">Amigo</option>
+                    <option value="conhecido">Conhecido</option>
+                    <option value="grupo">Grupo público</option>
+                    <option value="famoso">Perfil de influenciador/famoso</option>
+                    <option value="Desconhecido">Desconhecido</option>
+                </select>
+                <br>
+
+                <label for="data">Data do Recebimento:</label>
+                <input type="date" id="data">
+                <br>
+
+                <label for="link"></label>
+            </article>
+        </form>
+
+    </section>
+
+    <!--formulario de avaliação-->
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
         <form id="formulario_avaliacao">
@@ -113,7 +191,6 @@
 
         <button id="btn-topo" class="botao_voltar">Voltar ao topo</button>
     </section>
-<!-- adicionar Comentario-->
 
      <!--RODAPÉ-->
     <footer>

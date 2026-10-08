@@ -168,6 +168,12 @@ footer {
 }
 
 /*comentario*/
+.relatos-comentarios {
+     background-color:white;
+    margin-top: 10px;
+    padding: 50px;
+    border-radius: 10px;
+}
 
 /*formulario de avaliação*/
 .form_avaliacao {
