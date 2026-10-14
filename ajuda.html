@@ -113,11 +113,50 @@
                 <label for="data">Data do Recebimento:</label>
                 <input type="date" id="data">
                 <br>
-
-                <label for="link"></label>
             </article>
-        </form>
 
+            <article class="descoberta">
+                <p><b>3. A Descoberta</b></p>
+
+                <label for="como-descobriu">Como você descobriu que era fake news?</label>
+                <select id="como descobriu">
+                    <option value="">Selecione</option>
+                    <option value="consultei-site">Consultei um site de checagem de fatos</option>
+                    <option value="tv">Vi na TV/grandes portais</option>
+                    <option value="absurdo">Parecia absurdo demais</option>
+                    <option value="avisaram">Alguém me avisou no grupo</option>
+                </select>
+                <br>
+
+                <label for="compartilhou">Você chegou a compartilhar antes de saber que era falsa?</label>
+                <select id="compartilhou>
+                    <option value="">Selecione</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+                <br>
+
+                <label for="impacto">Qual foi o impacto desse conteúdo?</label>
+                <select id="impacto">
+                    <option value="">Selecione</option>
+                    <option value="panico">Causou pânico</option>
+                    <option value="discução">Gerou discussões familiares</option>
+                    <option value="prejuizo">Prejuízo financeiro</option>
+                    <option value="confusao">Confusão sobre um serviço público</option>
+                    <option value="nenhum">Nenhum impacto</option>
+                </select>
+                <textarea></textarea>
+                <br>
+            </article>
+            <br>
+            <button id="btn-enviar-comentario">Enviar</button>
+        </form>
+        <br>
+        <button id="ver-relatos" class="ver-relatos">ver relatos ></button>
+
+        <article class="relatos">
+            <p id="relatos"></p>
+        </article>
     </section>
 
     <!--formulario de avaliação-->

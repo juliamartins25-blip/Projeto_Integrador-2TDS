@@ -169,10 +169,16 @@ footer {
 
 /*comentario*/
 .relatos-comentarios {
-     background-color:white;
+    background-color:white;
     margin-top: 10px;
     padding: 50px;
     border-radius: 10px;
+}
+
+.ver-relatos {
+    margin: 10px;
+    color: rgb(60, 62, 75);
+    background-color: white;
 }
 
 /*formulario de avaliação*/
@@ -184,7 +190,11 @@ footer {
 }
 
 option {
-    font-size: 15px;
+    font-size: 18px;
+}
+
+input {
+    font-size: 18px;
 }
 
 select {
@@ -333,6 +343,7 @@ textarea {
 
     button {
         font-size: 17px;
+        padding: 5px;
     }
 
     label {
@@ -343,7 +354,7 @@ textarea {
         padding: 30px;
     }
 
-    button {
-        padding: 5px;
+    input {
+        font-size: 15px;
     }
 }
