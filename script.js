@@ -27,8 +27,6 @@ const btnEnviarComentario = document.querySelector("#btn-enviar-comentario");
 
 const comentario = document.querySelector("#comentario");
 
-let comentarios = [];
-
 formComentarios.addEventListener("submit", function(evento){
     evento.preventDefault();
 });
