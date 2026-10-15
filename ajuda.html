@@ -119,7 +119,7 @@
                 <p><b>3. A Descoberta</b></p>
 
                 <label for="como-descobriu">Como você descobriu que era fake news?</label>
-                <select id="como descobriu">
+                <select id="como-descobriu">
                     <option value="">Selecione</option>
                     <option value="consultei-site">Consultei um site de checagem de fatos</option>
                     <option value="tv">Vi na TV/grandes portais</option>
@@ -129,7 +129,7 @@
                 <br>
 
                 <label for="compartilhou">Você chegou a compartilhar antes de saber que era falsa?</label>
-                <select id="compartilhou>
+                <select id="compartilhou">
                     <option value="">Selecione</option>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
@@ -149,13 +149,27 @@
                 <br>
             </article>
             <br>
-            <button id="btn-enviar-comentario">Enviar</button>
+            <button id="btn-enviar-relato" type="submit">Enviar</button>
         </form>
         <br>
-        <button id="ver-relatos" class="ver-relatos">ver relatos ></button>
+        <button id="ver-relatos" class="ver-relatos">ver mais ></button>
 
         <article class="relatos">
             <p id="relatos"></p>
+        </article>
+
+        <h3>Comentários</h3>
+        <form id="form-comentarios">
+            <label for="comentario">Deseja fazer algum comentario?</label>
+            <textarea id="comentario"></textarea>
+            <br>
+            <button id="btn-enviar-comentario" type="submit">Enviar</button>
+        </form>
+        
+        <button id="ver-comentario" class="ver-relatos">ver mais ></button>
+
+        <article class="comentarios">
+            <p id="comentarios"></p>
         </article>
     </section>
 

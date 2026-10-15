@@ -21,6 +21,58 @@ window.onscroll = function() {
     }
 };
 
+// formulario comentario
+const formComentarios = document.querySelector("#form-comentarios");
+const btnEnviarComentario = document.querySelector("#btn-enviar-comentario");
+
+const comentario = document.querySelector("#comentario");
+
+let comentarios = [];
+
+formComentarios.addEventListener("submit", function(evento){
+    evento.preventDefault();
+});
+
+btnEnviarComentario.addEventListener("click", function(){
+    comentarios.push(comentario);
+});
+
+// formulario de relatos
+const formRelatos = document.querySelector("#form-relatos");
+const btnEnviarRelato = document.querySelector("#btn-enviar-relato");
+
+const resumo = document.querySelector("#resumo");
+const formato = document.querySelector("#formato");
+const tema = document.querySelector("#tema");
+const ondeRecebeu = document.querySelector("#onde-recebeu");
+const quemCompartilhou = document.querySelector("#quem-compartilhou");
+const data = document.querySelector("#data");
+const comoDescobriu = document.querySelector("#como-descobriu");
+const compartilhou = document.querySelector("#compartilhou");
+const impacto = document.querySelector("#impacto");
+
+formRelatos.addEventListener("submit", function(evento){
+    evento.preventDefault();
+});
+
+btnEnviarRelato.addEventListener("click", function(){
+    console.log(resumo.value);
+    console.log(formato.value);
+    console.log(tema.value);
+    console.log(ondeRecebeu.value);
+    console.log(quemCompartilhou.value);
+    console.log(data.value);
+    console.log(comoDescobriu.value);
+    console.log(compartilhou.value);
+    console.log(impacto.value);
+
+
+});
+
+    // dados validados OK
+    // colocar o resultado em uma lista
+    // fazer os dados aparecerem em comentarios
+
 // formulario de avaliação
 const formAvaliação = document.querySelector("#formulario_avaliacao");
 const btnEnviar = document.querySelector("#btn-enviar");

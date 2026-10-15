@@ -1,0 +1,7 @@
+criar um dicionario chamado relato
+dentro do dicionario colocar o dado e a resposta.
+
+criar uma lista chamada relatos
+adicionar o dicionario à lista.
+
+criar função de criar dicionario relato.
