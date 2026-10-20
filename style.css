@@ -195,6 +195,7 @@ option {
 
 input {
     font-size: 18px;
+    margin: 15px;
 }
 
 select {
