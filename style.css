@@ -185,6 +185,10 @@ footer {
     display: none;
 }
 
+.ver-espaco {
+    display:contents;
+}
+
 /*formulario de avaliação*/
 .form_avaliacao {
     background-color:white;
