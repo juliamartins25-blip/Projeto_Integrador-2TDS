@@ -189,6 +189,12 @@ footer {
     display:contents;
 }
 
+.ver-ligado {
+    background-color:rgb(158, 184, 231);
+    color: white;
+    padding: 5px;
+}
+
 /*formulario de avaliação*/
 .form_avaliacao {
     background-color:white;
@@ -360,10 +366,14 @@ textarea {
     }
 
     .form_avaliacao {
-        padding: 30px;
+        padding: 20px;
     }
 
     input {
         font-size: 15px;
+    }
+
+    .relatos-comentarios {
+        padding: 20px;
     }
 }

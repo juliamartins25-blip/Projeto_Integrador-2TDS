@@ -51,5 +51,6 @@ formComentario.addEventListener("submit", function(evento) {
 
 const verComentario = document.querySelector("#ver-comentario");
 verComentario.addEventListener("click", function( ){
-    //adicionar comando que altera estilo para classe que faz ver o espaço para os comentarios.
+    espacoComentario.classList.toggle("ver-espaco");
+    verComentario.classList.toggle("ver-ligado");
 })
