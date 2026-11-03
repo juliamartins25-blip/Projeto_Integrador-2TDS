@@ -175,10 +175,14 @@ footer {
     border-radius: 10px;
 }
 
-.ver-relatos {
+.ver {
     margin: 10px;
     color: rgb(120, 123, 143);
     background-color: white;
+}
+
+.espaco {
+    display: none;
 }
 
 /*formulario de avaliação*/

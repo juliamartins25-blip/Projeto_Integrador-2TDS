@@ -45,139 +45,52 @@
 <!--formulario de relatos e Comentarios-->
     <section class="relatos-comentarios">
         <h2>Comentarios e relatos</h2>
+        <!--relatos-->
         <h3>Relatos</h3>
-        <form id="form-relatos"></form>
-            <p><b>Identificação</b></p>
-            <label for="nome">Nome ou apelido:</label>
-            <input id="nome" type="text">
-
-            <article class="conteudo">
-                <p><b>1. O conteúdo</b></p>
-
-                <label for="resumo">Título ou Resumo:</label>
-                <br>
-                <textarea id="resumo"></textarea>
-                <br>
-
-                <label for="formato">Formato do Conteúdo:</label>
-                <select id="formato">
-                    <option value="">Selecione</option>
-                    <option value="texto">Texto</option>
-                    <option value="imagem">Imagem/Print de tela</option>
-                    <option value="audio">Audio</option>
-                    <option value="video">Video</option>
-                    <option value="link">Link de site</option>
-                    <option value="meme">Memes</option>
-                </select>
-                <br>
-
-                <label for="tema">Tema principal:</label>
-                <select id="tema">
-                    <option value="">Selecione</option>
-                    <option value="saude">Saúde/Vacinas</option>
-                    <option value="politica">Política/Eleições</option>
-                    <option value="ciencia">Ciência</option>
-                    <option value="celebridade">Celebridades/Fofocas</option>
-                    <option value="seguranca">Segurança Pública</option>
-                    <option value="economia">Economia/Golpes</option>
-                    <option value="outro">Outro</option>
-                </select>
-            </article>
-
-            <article class="dimenção">
-                <p><b>2. A Disseminação</b></p>
-
-                <label for="onde-recebeu">Onde você viu ou recebeu?</label>
-                <select id="onde-recebeu">
-                    <option value="">Selecione</option>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="telegram">Telegram</option>
-                    <option value="facebook">Facebook</option>
-                    <option value="instagram">Instagram</option>
-                    <option value="ticktok">TikTok</option>
-                    <option value="twitter">Twitter</option>
-                    <option value="youtube">YouTube</option>
-                    <option value="boca">Boca a boca</option>
-                    <option value="site">Site de notícias falso</option>
-                </select>
-                <br>
-
-                <label for="quem-compartilhou">Quem compartilhou com você?</label>
-                <select id="quem-compartilhou">
-                    <option value="">Selecione</option>
-                    <option value="familiar">Familiar</option>
-                    <option value="amigo">Amigo</option>
-                    <option value="conhecido">Conhecido</option>
-                    <option value="grupo">Grupo público</option>
-                    <option value="famoso">Perfil de influenciador/famoso</option>
-                    <option value="Desconhecido">Desconhecido</option>
-                </select>
-                <br>
-
-                <label for="data">Data do Recebimento:</label>
-                <input type="date" id="data">
-                <br>
-            </article>
-
-            <article class="descoberta">
-                <p><b>3. A Descoberta</b></p>
-
-                <label for="como-descobriu">Como você descobriu que era fake news?</label>
-                <select id="como-descobriu">
-                    <option value="">Selecione</option>
-                    <option value="consultei-site">Consultei um site de checagem de fatos</option>
-                    <option value="tv">Vi na TV/grandes portais</option>
-                    <option value="absurdo">Parecia absurdo demais</option>
-                    <option value="avisaram">Alguém me avisou no grupo</option>
-                </select>
-                <br>
-
-                <label for="compartilhou">Você chegou a compartilhar antes de saber que era falsa?</label>
-                <select id="compartilhou">
-                    <option value="">Selecione</option>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
-                <br>
-
-                <label for="impacto">Qual foi o impacto desse conteúdo?</label>
-                <select id="impacto">
-                    <option value="">Selecione</option>
-                    <option value="panico">Causou pânico</option>
-                    <option value="discução">Gerou discussões familiares</option>
-                    <option value="prejuizo">Prejuízo financeiro</option>
-                    <option value="confusao">Confusão sobre um serviço público</option>
-                    <option value="nenhum">Nenhum impacto</option>
-                </select>
-                <textarea></textarea>
-                <br>
-            </article>
+        <form id="form-relatos">
+            <label for="acreditou">Você já caiu em uma fake news?</label>
+            <select id="acreditou">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+            </select>
             <br>
+
+            <label for="tema">Se sim, de qual tema foi?</label>
+            <select id="tema">
+                <option value="">Selecione</option>
+                <option value="saude">Saúde/Vacinas</option>
+                <option value="politica">Política/Eleições</option>
+                <option value="ciencia">Ciência</option>
+                <option value="celebridade">Celebridades/Fofocas</option>
+                <option value="seguranca">Segurança Pública</option>
+                <option value="economia">Economia/Golpes</option>
+                <option value="outro">Outro</option>
+            </select>
+            <br>
+
             <button id="btn-enviar-relato" type="submit">Enviar</button>
         </form>
-        <br>
-        <button id="ver-relatos" class="ver-relatos">ver mais ></button>
+        
+        <button id="ver-relatos" class="ver">ver relatos ></button>
 
-        <article class="relatos">
-            <p id="relatos"></p>
+        <article class="espaço-para-relatos">
+            
         </article>
 
+        <!--comentarios-->
         <h3>Comentários</h3>
         <form id="form-comentarios">
-            <label for="nome">Nome ou apelido:</label>
-            <input id="nome" type="text">
-            <br>
-
             <label for="comentario">Deseja fazer algum comentario?</label>
             <textarea id="comentario"></textarea>
             <br>
             <button id="btn-enviar-comentario" type="submit">Enviar</button>
         </form>
         
-        <button id="ver-comentario" class="ver-relatos">ver mais ></button>
+        <button id="ver-comentario" class="ver">ver comentarios ></button>
 
-        <article class="comentarios">
-            <p id="comentarios"></p>
+        <article id="espaco-para-comentarios" class="espaco">
+            <p id="mensagem">Nada ainda...</p>
         </article>
     </section>
 
@@ -185,10 +98,6 @@
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
         <form id="formulario_avaliacao">
-            <label for="nome">Nome ou apelido:</label>
-            <input id="nome" type="text">
-            <br>
-            
             <label for="clareza">1- As informações estavam claras?</label>
             <select id="clareza">
                 <option value="">Selecione</option>
@@ -254,6 +163,7 @@
 
             <button id="btn-enviar">Enviar</button>
         </form>
+        <button id="ver-comentario" class="ver">ver avaliações ></button>
 
         <button id="btn-topo" class="botao_voltar">Voltar ao topo</button>
     </section>

@@ -1,7 +1,3 @@
-criar um dicionario chamado relato
-dentro do dicionario colocar o dado e a resposta.
-
-criar uma lista chamada relatos
-adicionar o dicionario à lista.
-
-criar função de criar dicionario relato.
+    *conteudo quantitativo*
+--> formulario de relatos
+tabela em formato de linha horizontal, com os valores em cores diferentes, e uma legenda em baixo explicando cada cor.

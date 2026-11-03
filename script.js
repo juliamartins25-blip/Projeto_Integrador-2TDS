@@ -22,83 +22,31 @@ window.onscroll = function() {
 };
 
 // formulario comentario
-const formComentarios = document.querySelector("#form-comentarios");
-const btnEnviarComentario = document.querySelector("#btn-enviar-comentario");
+const formComentario = document.querySelector("#form-comentarios");
+const espacoComentario = document.querySelector("#espaco-para-comentarios");
 
-const comentario = document.querySelector("#comentario");
-
-formComentarios.addEventListener("submit", function(evento){
-    evento.preventDefault();
-});
-
-btnEnviarComentario.addEventListener("click", function(){
-    comentarios.push(comentario);
-});
-
-// formulario de relatos
-const formRelatos = document.querySelector("#form-relatos");
-const btnEnviarRelato = document.querySelector("#btn-enviar-relato");
-
-const resumo = document.querySelector("#resumo");
-const formato = document.querySelector("#formato");
-const tema = document.querySelector("#tema");
-const ondeRecebeu = document.querySelector("#onde-recebeu");
-const quemCompartilhou = document.querySelector("#quem-compartilhou");
-const data = document.querySelector("#data");
-const comoDescobriu = document.querySelector("#como-descobriu");
-const compartilhou = document.querySelector("#compartilhou");
-const impacto = document.querySelector("#impacto");
-
-formRelatos.addEventListener("submit", function(evento){
-    evento.preventDefault();
-});
-
-btnEnviarRelato.addEventListener("click", function(){
-    console.log(resumo.value);
-    console.log(formato.value);
-    console.log(tema.value);
-    console.log(ondeRecebeu.value);
-    console.log(quemCompartilhou.value);
-    console.log(data.value);
-    console.log(comoDescobriu.value);
-    console.log(compartilhou.value);
-    console.log(impacto.value);
-
-
-});
-
-    // dados validados OK
-    // colocar o resultado em uma lista
-    // fazer os dados aparecerem em comentarios
-
-// formulario de avaliação
-const formAvaliação = document.querySelector("#formulario_avaliacao");
-const btnEnviar = document.querySelector("#btn-enviar");
-
-const clareza = document.querySelector("#clareza");
-const utilidade = document.querySelector("#utilidade");
-const facilidade = document.querySelector("#facilidade");
-const organizado = document.querySelector("#organizado");
-const acessibilidade = document.querySelector("#acessibilidade");
-const recomendaria = document.querySelector("#recomendaria");
-const atencao = document.querySelector("#atencao");
-const sugestao = document.querySelector("#sugestao");
-
-formAvaliação.addEventListener("submit", function(evento){
+formComentario.addEventListener("submit", function(evento) {
     evento.preventDefault();
 
-    console.log("formulario recebido");
-})
+    console.log("recebido");
 
-btnEnviar.addEventListener("click", function(){
-    console.log(clareza.value);
-    console.log(utilidade.value);
-    console.log(facilidade.value);
-    console.log(organizado.value);
-    console.log(acessibilidade.value);
-    console.log(recomendaria.value);
-    console.log(atencao.value);
-    console.log(sugestao.value);
+    const comentario = document.querySelector("#comentario").value;
+
+    const novoComentario = document.createElement('div');
+    novoComentario.style.border = "1px solid #ccc";
+    novoComentario.style.borderRadius = "5px";
+    novoComentario.style.padding = "10px";
+    novoComentario.style.marginBottom = "10px";
+
+    novoComentario.innerHTML = `<p>${comentario}</p>`;
+
+    espacoComentario.appendChild(novoComentario);
+    formComentario.reset();
+
+    const mensagem = document.querySelector("#mensagem");
+    mensagem.textContent = "";
 });
 
-// dados validados. proximo passoa agora
+    //ver resultado ao clicar no botao ver mais
+
+const 
