@@ -57,7 +57,7 @@
             <br>
 
             <label for="tema">Se sim, de qual tema foi?</label>
-            <select id="tema" required>
+            <select id="tema">
                 <option value="">Selecione</option>
                 <option value="saude">Saúde/Vacinas</option>
                 <option value="politica">Política/Eleições</option>
@@ -71,12 +71,12 @@
 
             <button id="btn-enviar-relato" type="submit">Enviar</button>
         </form>
-        <hr>
-
+        
         <article class="espaço-para-relatos">
-            
+            <p id="mensagem">Nada ainda...</p>
         </article>
 
+        <hr>
         <!--comentarios-->
         <h3>Comentários</h3>
         <form id="form-comentarios">
@@ -109,6 +109,7 @@
             <br>
 
             <label for="texto-avaliacao">Escreva sua avaliação</label>
+            <br>
             <textarea id="texto-avaliacao" required></textarea>
             <br>
 

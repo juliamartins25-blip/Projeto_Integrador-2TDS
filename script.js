@@ -53,4 +53,19 @@ const verComentario = document.querySelector("#ver-comentario");
 verComentario.addEventListener("click", function( ){
     espacoComentario.classList.toggle("ver-espaco");
     verComentario.classList.toggle("ver-ligado");
-})
+});
+
+// formulario de relatos
+
+const formRelatos = document.querySelector("#form-relatos");
+const espacoRelatos = document.querySelector("#espaço-para-relatos");
+
+formRelatos.addEventListener("submit", function(evento){
+    evento.preventDefault();
+
+    const acreitou = document.querySelector("#acreditou").value;
+
+    if (acreitou === "sim"){
+        const tema = document.querySelector("#tema").value;
+    }
+});
