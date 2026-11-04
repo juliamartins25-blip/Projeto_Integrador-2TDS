@@ -49,7 +49,7 @@
         <h3>Relatos</h3>
         <form id="form-relatos">
             <label for="acreditou">Você já caiu em uma fake news?</label>
-            <select id="acreditou">
+            <select id="acreditou" required>
                 <option value="">Selecione</option>
                 <option value="sim">Sim</option>
                 <option value="não">Não</option>
@@ -57,7 +57,7 @@
             <br>
 
             <label for="tema">Se sim, de qual tema foi?</label>
-            <select id="tema">
+            <select id="tema" required>
                 <option value="">Selecione</option>
                 <option value="saude">Saúde/Vacinas</option>
                 <option value="politica">Política/Eleições</option>
@@ -71,8 +71,7 @@
 
             <button id="btn-enviar-relato" type="submit">Enviar</button>
         </form>
-        
-        <button id="ver-relatos" class="ver">ver relatos</button>
+        <hr>
 
         <article class="espaço-para-relatos">
             
@@ -82,7 +81,7 @@
         <h3>Comentários</h3>
         <form id="form-comentarios">
             <label for="comentario">Deseja fazer algum comentario?</label>
-            <textarea id="comentario"></textarea>
+            <textarea id="comentario" required></textarea>
             <br>
             <button id="btn-enviar-comentario" type="submit">Enviar</button>
         </form>
@@ -98,72 +97,24 @@
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
         <form id="formulario_avaliacao">
-            <label for="clareza">1- As informações estavam claras?</label>
-            <select id="clareza">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="pode melhorar">Pode melhorar</option>
-                <option value="não">Não</option>
+            <label for="estrelas">Quantas estrelas o site merece?</label>
+            <select id="estrelas">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
             <br>
 
-            <label for="utilidade">2- O conteúdo foi útil?</label>
-            <select id="utilidade">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="pode melhorar">Pode melhorar</option>
-                <option value="não">Não</option>
-            </select>
-            <br>
-
-            <label for="facilidade">3- Foi fácil navegar pela página?</label>
-            <select id="facilidade">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="pode melhorar">Pode melhorar</option>
-                <option value="não">Não</option>
-            </select>
-            <br>
-
-            <label for="organizado">4- A aparência da página estava organizada?</label>
-            <select id="organizado">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="pode melhorar">Pode melhorar</option>
-                <option value="não">Não</option>
-            </select>
-            <br>
-
-            <label for="acessibilidade">5- Os recursos de acessibilidade funcionaram?</label>
-            <select id="acessibilidade">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="pode melhorar">Pode melhorar</option>
-                <option value="não">Não</option>
-            </select>
-            <br>
-
-            <label for="recomendaria">6- Você recomendaria esta página?</label>
-            <select id="recomendaria">
-                <option value="">Selecione</option>
-                <option value="sim">Sim</option>
-                <option value="não">Não</option>
-            </select>
-            <br>
-
-            <label for="atencao">7- Qual parte chamou mais atenção?</label>
-            <br>
-            <textarea id="atencao"></textarea>
-            <br>
-
-            <label for="sugestao">8- O que poderia ser melhorado?</label>
-            <br>
-            <textarea id="sugestao"></textarea>
+            <label for="texto-avaliacao">Escreva sua avaliação</label>
+            <textarea id="texto-avaliacao" required></textarea>
             <br>
 
             <button id="btn-enviar">Enviar</button>
         </form>
-        <button id="ver-comentario" class="ver">ver avaliações ></button>
+        <button id="ver-comentario" class="ver">ver avaliações</button>
 
         <button id="btn-topo" class="botao_voltar">Voltar ao topo</button>
     </section>

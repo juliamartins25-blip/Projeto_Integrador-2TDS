@@ -27,7 +27,7 @@ const espacoComentario = document.querySelector("#espaco-para-comentarios");
 
 formComentario.addEventListener("submit", function(evento) {
     evento.preventDefault();
-
+    
     console.log("recebido");
 
     const comentario = document.querySelector("#comentario").value;
