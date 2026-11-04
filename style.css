@@ -168,6 +168,56 @@ footer {
     flex:1;
 }
 
+/*formulario de relatos*/
+    /*acreditou*/
+.grafico {
+    display: flex;
+    width: 1000px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #c5c3c3;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.fatia {
+    height: 100%;
+    transition: widht 0.4s ease;
+}
+
+.sim { background-color: #32dd3e;}
+.nao { background-color: #fd4545;}
+
+.opcao {
+    color:rgb(60, 62, 75);
+    font-size: 22px;
+    margin-right: 25px;
+}
+
+.confirmar {
+    font-size: 22px;
+    padding: 6px;
+}
+
+    /*legenda*/
+.cor {
+    width: 25px;
+    height: 25px;
+}
+
+.legenda {
+    font-size: 22px;
+}
+
+    /*tema*/
+.saude {background-color: #ff5b1f;}
+.politica {background-color: #ffa959;}
+.ciencia {background-color: #ffde59;}
+.celebridades {background-color: #c1ff72;}
+.seguranca {background-color: #00bf63;}
+.economia {background-color: #5170ff;}
+.outro {background-color: #8c52ff;}
+
 /*comentario*/
 .relatos-comentarios {
     background-color:white;
@@ -207,7 +257,7 @@ option {
 }
 
 input {
-    font-size: 18px;
+    font-size: 20px;
     margin: 15px;
 }
 
