@@ -27,11 +27,10 @@ const espacoComentario = document.querySelector("#espaco-para-comentarios");
 
 formComentario.addEventListener("submit", function(evento) {
     evento.preventDefault();
-    
-    console.log("recebido");
 
     const comentario = document.querySelector("#comentario").value;
 
+    //cria elemento no espaço
     const novoComentario = document.createElement('div');
     novoComentario.style.border = "1px solid #ccc";
     novoComentario.style.borderRadius = "5px";
@@ -42,13 +41,16 @@ formComentario.addEventListener("submit", function(evento) {
 
     espacoComentario.appendChild(novoComentario);
     formComentario.reset();
-
+    //mensagem concluido
+    const mensagemConcluido = document.querySelector("#mensagem-sucesso-c");
+    mensagemConcluido.classList.add("ativo");
+    setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
+    //remove mensagem de espera
     const mensagem = document.querySelector("#mensagem");
     mensagem.textContent = "";
 });
 
     //ver resultado ao clicar no botao ver mais
-
 const verComentario = document.querySelector("#ver-comentario");
 verComentario.addEventListener("click", function( ){
     espacoComentario.classList.toggle("ver-espaco");
@@ -61,6 +63,7 @@ let totalSim = 0;
 let totalNao = 0;
 let totalVotacao = 0;
 
+//função que gera grafico
 function atualizarGrafico(){
     const total = totalSim + totalNao;
 
@@ -78,15 +81,14 @@ function atualizarGrafico(){
     //mostrar total de votos
     document.querySelector("#total-votos").textContent = `${totalVotacao}`;
 }
-
+//atualiza grafico com resposta
 const formAcreditou = document.querySelector("#form-acreditou");
 
 formAcreditou.addEventListener("submit", function(evento) {
     evento.preventDefault();
-
     totalVotacao++;
     const acreditou = document.querySelector("#acreditou").value;
-
+    //verificação: sim ou não
     if (acreditou === 'sim') {
         totalSim++;
     } else if (acreditou === 'nao') {
@@ -107,7 +109,7 @@ let totalEconomia = 0;
 let totalOutro = 0;
 
 let totalVotacaoTema = 0;
-
+//cria grafico
 function atualizarGraficoTema (){
     const total = totalSaude + totalPolitica + totalCiencia + totalCelebridades + totalSeguranca + totalEconomia + totalOutro;
 
@@ -140,7 +142,7 @@ function atualizarGraficoTema (){
     //mostrar total de votos
     document.querySelector("#total-votos-tema").textContent = `${totalVotacaoTema}`;
 }
-
+//atualiza grafico com resposta
 const formTema = document.querySelector("#form-tema");
 
 formTema.addEventListener("submit", function(evento){
@@ -170,19 +172,48 @@ formTema.addEventListener("submit", function(evento){
 });
 
 // formulario de avaliação
-const formAvaliacao = document.querySelector("#formulario-avaliacao");
+    //marcar estrela
+const estrelas = document.querySelectorAll(".estrela");
+let notaSelecionada = 0;
+
+estrelas.forEach(function(estrela) {
+    estrela.addEventListener("click", function(){
+        notaSelecionada = Number(estrela.getAttribute("data-valor"));
+
+        estrelas.forEach(function(item){
+            const valorItem = Number(item.getAttribute("data-valor"));
+
+            if (valorItem <= notaSelecionada) {
+                item.classList.add("ativa");
+            } else {
+                item.classList.remove("ativa");
+            }
+        });
+    });
+});
+
+    // verifica o clic no botão enviar
+const btnEnviar = document.querySelector("#btn-enviar");
 const espacoAvaliacao = document.querySelector("#espaco-avaliacoes");
 
-formAvaliacao.addEventListener("submit", function(evento) {
-    evento.preventDefault();
+btnEnviar.addEventListener("click", function() {
+    const textoAvaliacao = document.querySelector("#texto-avaliacao").value;
 
-    const estrelas = document.querySelector("#estrelas").value;
-    const texto = document.querySelector("#texto-avaliacao").value;
-
+    // verifica se está vazio
+    const mensagemErro = document.querySelector("#mensagem-erro");
+    if (textoAvaliacao === "" || notaSelecionada === 0) {
+        mensagemErro.classList.add("mensagem-erro-ativa");
+        setTimeout(function(){mensagemErro.classList.remove("mensagem-erro-ativa");}, 3000);
+        return;
+    } else {
+        mensagemErro.classList.remove("mensagem-erro-ativa");
+    };
+    
+    //insere a resposta no espaço
     const novaAvaliacao = document.createElement('div');
     novaAvaliacao.innerHTML = `
-        <p>${estrelas} estrelas.</p>
-        <p>${texto}</p>
+        <p>Nota: ${notaSelecionada}</p>
+        <p>${textoAvaliacao}</p>
     `;
 
     novaAvaliacao.style.border = "1px solid #ccc";
@@ -191,12 +222,25 @@ formAvaliacao.addEventListener("submit", function(evento) {
     novaAvaliacao.style.marginBottom = "10px";
 
     espacoAvaliacao.appendChild(novaAvaliacao);
-    formAvaliacao.reset();
 
+    //reseta o formulario
+    document.querySelector("#texto-avaliacao").value = "";
+    notaSelecionada = 0;
+    estrelas.forEach(function(item) {
+        item.classList.remove("ativa");
+    })
+    
+    // mensagem de concluido
+    const mensagemConcluido = document.querySelector("#mensagem-sucesso-a");
+    mensagemConcluido.classList.add("ativo");
+    setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
+
+    // remove mensagem de espera
     const mensagem = document.querySelector("#mensagem2");
     mensagem.textContent = "";
 });
 
+    // botão ver mais
 const btnVer = document.querySelector("#ver");
 btnVer.addEventListener("click", function(){
     espacoAvaliacao.classList.toggle("ver-espaco");

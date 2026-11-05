@@ -171,18 +171,15 @@ footer {
 .sim { background-color: #32dd3e;}
 .nao { background-color: #fd4545;}
 
-.opcao {
-    color:rgb(60, 62, 75);
-    font-size: 22px;
-    margin-right: 25px;
-}
-
 .confirmar {
     font-size: 22px;
     padding: 6px;
 }
 
-.selecione{font-size: 22px;}
+.selecione{
+    font-size: 22px;
+    color:rgb(60, 62, 75);
+}
 
     /*legenda*/
 .cor {
@@ -249,8 +246,47 @@ label{
 textarea {
     width:80%;
     font-size:20px;
-    margin: 20px;
+    margin: 10px;
 }
+
+.linha-estrelas {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.span-p {
+    font-size: 30px;
+    color:rgb(60, 62, 75);
+}
+
+.estrela {
+    font-size: 40px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.estrela.ativa {color: #ffcb1e;}
+
+.mensagem-erro {
+    color:brown; 
+    font-size: 20px;
+    margin: 0px;
+    display: none;
+}
+
+.mensagem-erro-ativa {display:contents;}
+
+.mensagem-sucesso {
+    color:rgb(8, 155, 33); 
+    font-size: 20px;
+    margin: 0px;
+    display: none;
+}
+
+.mensagem-sucesso.ativo {display:contents;}
 
 /*sobre*/
 .header_rosa{background: linear-gradient(to right, rgb(209, 55, 132), rgb(158, 59, 223));}
@@ -371,4 +407,12 @@ textarea {
     }
 
     .porcentagem {font-size: 15px;}
+    
+    .linha-estrelas {
+        display:contents;
+    }
+
+    .span-p {
+        font-size: 20px;
+    }
 }

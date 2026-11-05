@@ -58,7 +58,6 @@
                 </select>
                 <button id="confirmar" class="confirmar" type="sumbit">Confirmar</button>
             </form>
-            
             <section class="espaco-para-relatos">
                 <article style="display: flex;">
                     <div class="grafico" id="grafico-sim-não">
@@ -152,7 +151,6 @@
                     </div>
                 </article>
             </section>
-            
         </section>
 
         <hr style="margin:30px 0px 30px 0px;">
@@ -161,6 +159,8 @@
         <form id="form-comentarios">
             <label for="comentario">Deseja fazer algum comentario?</label>
             <textarea id="comentario" required></textarea>
+            <br>
+            <p id="mensagem-sucesso-c" class="mensagem-sucesso">Avaliação enviada ✓</p>
             <br>
             <button id="btn-enviar-comentario" type="submit">Enviar</button>
         </form>
@@ -175,6 +175,8 @@
     <!--formulario de avaliação-->
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
+        <p id="mensagem-erro" class="mensagem-erro">*Preencha os campos entes de enviar</p>
+        <br>
         <div class="linha-estrelas">
             <span class="span-p">Quantas estrelas o site merece?</span>
             <div class="estrelas">
@@ -186,16 +188,15 @@
             </div>
         </div>
 
-        <form id="formulario-avaliacao">
-            <label for="texto-avaliacao">Escreva sua avaliação</label>
-            <br>
-            <textarea id="texto-avaliacao" required></textarea>
-            <br>
+        <label for="texto-avaliacao">Escreva sua avaliação</label>
+        <br>
+        <textarea id="texto-avaliacao" name="texto-avaliacao"></textarea>
+        <br>
+        <p id="mensagem-sucesso-a" class="mensagem-sucesso">Avaliação enviada ✓</p>
+        <br>
+        <button id="btn-enviar">Enviar</button>
 
-            <button id="btn-enviar">Enviar</button>
-        </form>
         <button id="ver" class="ver">ver avaliações</button>
-
         <article id="espaco-avaliacoes" class="espaco">
             <p id="mensagem2">Nada ainda...</p>
         </article>
