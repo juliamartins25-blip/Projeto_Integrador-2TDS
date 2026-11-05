@@ -62,8 +62,8 @@
             <section class="espaco-para-relatos">
                 <article style="display: flex;">
                     <div class="grafico" id="grafico-sim-não">
-                        <div id="fatia-sim" class="fatia sim" style="width: 0%;"><p id="porcentagem-sim" style="margin: 7px;"></p></div>
-                        <div id="fatia-nao" class="fatia nao" style="width: 0%;"><p id="porcentagem-nao" style="margin: 7px;"></p></div>
+                        <div id="fatia-sim" class="fatia sim" style="width: 0%;"><p id="porcentagem-sim" style="margin: 7px;" class="porcentagem"></p></div>
+                        <div id="fatia-nao" class="fatia nao" style="width: 0%;"><p id="porcentagem-nao" style="margin: 7px;" class="porcentagem"></p></div>
                     </div>
                     <p id="total-votos">0</p>
                 </article>
@@ -102,13 +102,13 @@
             <section class="espaço-para-tema">
                 <article style="display:flex">
                     <div id="grafico-tema" class="grafico">
-                        <div id="fatia-saude" class="fatia saude" style="width: 0%;"><p id="porcentagem-saude" style="margin: 7px;"></p></div>
-                        <div id="fatia-politica" class="fatia politica" style="width: 0%;"><p id="porcentagem-politica" style="margin: 7px;"></p></div>
-                        <div id="fatia-ciencia" class="fatia ciencia" style="width: 0%;"><p id="porcentagem-ciencia" style="margin: 7px"></p></div>
-                        <div id="fatia-celebridades" class="fatia celebridades" style="width: 0%;"><p id="porcentagem-celebridades" style="margin: 7px"></p></div>
-                        <div id="fatia-seguranca" class="fatia seguranca" style="width: 0%;"><p id="porcentagem-seguranca" style="margin: 7px"></p></div>
-                        <div id="fatia-economia" class="fatia economia" style="width: 0%;"><p id="porcentagem-economia" style="margin: 7px"></p></div>
-                        <div id="fatia-outro" class="fatia outro" style="width: 0%;"><p id="porcentagem-outro" style="margin: 7px"></p></div>
+                        <div id="fatia-saude" class="fatia saude" style="width: 0%;"><p id="porcentagem-saude" style="margin: 7px;" class="porcentagem"></p></div>
+                        <div id="fatia-politica" class="fatia politica" style="width: 0%;"><p id="porcentagem-politica" style="margin: 7px;" class="porcentagem"></p></div>
+                        <div id="fatia-ciencia" class="fatia ciencia" style="width: 0%;"><p id="porcentagem-ciencia" style="margin: 7px" class="porcentagem"></p></div>
+                        <div id="fatia-celebridades" class="fatia celebridades" style="width: 0%;"><p id="porcentagem-celebridades" style="margin: 7px" class="porcentagem"></p></div>
+                        <div id="fatia-seguranca" class="fatia seguranca" style="width: 0%;"><p id="porcentagem-seguranca" style="margin: 7px" class="porcentagem"></p></div>
+                        <div id="fatia-economia" class="fatia economia" style="width: 0%;"><p id="porcentagem-economia" style="margin: 7px" class="porcentagem"></p></div>
+                        <div id="fatia-outro" class="fatia outro" style="width: 0%;"><p id="porcentagem-outro" style="margin: 7px" class="porcentagem"></p></div>
                     </div>
                     <p id="total-votos-tema">0</p>
                 </article>
@@ -175,18 +175,18 @@
     <!--formulario de avaliação-->
     <section class="form_avaliacao">
         <h2>Avalie nosso site</h2>
-        <form id="formulario-avaliacao">
-            <label for="estrelas">Quantas estrelas o site merece?</label>
-            <select id="estrelas">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <br>
+        <div class="linha-estrelas">
+            <span class="span-p">Quantas estrelas o site merece?</span>
+            <div class="estrelas">
+                <span class="estrela" data-valor="1">&#9733;</span>
+                <span class="estrela" data-valor="2">&#9733;</span>
+                <span class="estrela" data-valor="3">&#9733;</span>
+                <span class="estrela" data-valor="4">&#9733;</span>
+                <span class="estrela" data-valor="5">&#9733;</span>
+            </div>
+        </div>
 
+        <form id="formulario-avaliacao">
             <label for="texto-avaliacao">Escreva sua avaliação</label>
             <br>
             <textarea id="texto-avaliacao" required></textarea>
