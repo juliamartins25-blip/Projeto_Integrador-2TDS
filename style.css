@@ -1,7 +1,5 @@
 /* Cabeçalho */
-body {
-    background-color:rgb(221, 227, 231);
-}
+body {background-color:rgb(221, 227, 231);}
 
 header {
     text-align:center;
@@ -15,13 +13,9 @@ header {
     background: linear-gradient(to right, rgb(35, 96, 177), rgb(35, 177, 177));
 }
 
-.titulo {
-    font-size: 50px;
-}
+.titulo {font-size: 50px;}
 
-.tema {
-    font-size: 40px;
-}
+.tema {font-size: 40px;}
 
 .nome_pagina {
     margin-left: 30px;
@@ -50,10 +44,7 @@ nav a {
     padding: 15px 15px;
 }
 
-nav a:hover {
-    background-color:rgb(70, 89, 194);
-
-}
+nav a:hover {background-color:rgb(70, 89, 194);}
 
 /* Pagina inicial */
 main {
@@ -75,18 +66,14 @@ p {
     color:rgb(60, 62, 75);
 }
 
-mark {
-    background-color: aquamarine;
-}
+mark {background-color: aquamarine;}
 
 .container_img {
     display: flex;
     justify-content: center;
 }
 
-.img {
-    height: auto;
-}
+.img {height: auto;}
 
 /*veja_mais*/
 .veja_mais{
@@ -117,9 +104,7 @@ button {
     opacity: 0.5;
 }
 
-.botao_voltar:hover{
-    opacity: 1;
-}
+.botao_voltar:hover{opacity: 1;}
 
 /* problema*/
 .lista_p{
@@ -164,9 +149,7 @@ footer {
     color: rgb(255, 255, 255);
 }
 
-.texto_footer{
-    flex:1;
-}
+.texto_footer{flex:1;}
 
 /*formulario de relatos*/
     /*acreditou*/
@@ -199,14 +182,26 @@ footer {
     padding: 6px;
 }
 
+.selecione{font-size: 22px;}
+
     /*legenda*/
 .cor {
     width: 25px;
     height: 25px;
 }
 
-.legenda {
-    font-size: 22px;
+.legenda {font-size: 22px;}
+
+.item-legenda {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+.container-legenda {
+    display:flex;
+    gap: 40px;
+    margin:30px;
 }
 
     /*tema*/
@@ -232,17 +227,11 @@ footer {
     background-color: white;
 }
 
-.espaco {
-    display: none;
-}
+.espaco {display: none;}
 
-.ver-espaco {
-    display:contents;
-}
+.ver-espaco {display:contents;}
 
-.ver-ligado {
-    color: rgb(0, 0, 0);
-}
+.ver-ligado {color: rgb(0, 0, 0);}
 
 /*formulario de avaliação*/
 .form_avaliacao {
@@ -252,9 +241,7 @@ footer {
     border-radius: 10px;
 }
 
-option {
-    font-size: 18px;
-}
+option {font-size: 18px;}
 
 input {
     font-size: 20px;
@@ -279,13 +266,9 @@ textarea {
 }
 
 /*sobre*/
-.header_rosa{
-    background: linear-gradient(to right, rgb(209, 55, 132), rgb(158, 59, 223));
-}
+.header_rosa{background: linear-gradient(to right, rgb(209, 55, 132), rgb(158, 59, 223));}
 
-.h3_rosa {
-    color:rgb(119, 19, 94);
-}
+.h3_rosa {color:rgb(119, 19, 94);}
 
 .h2_rosa {
     margin-top:80px;
@@ -297,27 +280,17 @@ textarea {
     gap: 10%;
 }
 
-.doby_rosa {
-    background-color:rgb(231, 221, 230);
-}
+.doby_rosa {background-color:rgb(231, 221, 230);}
 
-.mudar_rosa {
-    background-color:rgb(75, 14, 75);
-}
+.mudar_rosa {background-color:rgb(75, 14, 75);}
 
-.nav_mudar_rosa {
-    background-color:rgb(75, 14, 75);
-}
+.nav_mudar_rosa { background-color:rgb(75, 14, 75);}
 
-.nav_mudar_rosa a:hover {
-    background-color:rgb(155, 24, 122);
-}
+.nav_mudar_rosa a:hover { background-color:rgb(155, 24, 122);}
 
 /*tela menor*/
 @media (max-width: 900px) {
-    main {
-        padding: 20px;
-    }
+    main { padding: 20px;}
 
     nav {
         flex-direction: column;
@@ -325,104 +298,88 @@ textarea {
         font-size: 18px;
     }
 
-    nav a {
-        padding:10px;
-    }
+    nav a { padding:10px;}
 
-    .veja_mais {
-        padding: 20px;
-    }
+    .veja_mais { padding: 20px;}
 
-    footer {
-        display:list-item;
-    }
+    footer { display:list-item;}
 
-    p {
-        font-size: 20px;
-    }
+    p { font-size: 20px;}
 
-    .titulo {
-        font-size: 40px;
-    }
+    .titulo { font-size: 40px;}
 
-    .tema {
-        font-size: 30px;
-    }
-    h2 {
-        font-size: 25px;
-    }
+    .tema { font-size: 30px;}
 
-    .lista_p {
-        font-size: 20px;
-    }
+    h2 { font-size: 25px;}
 
-    h3 {
-        font-size: 23px;
-    }
+    .lista_p { font-size: 20px;}
 
-    .p_footer {
-        font-size: 20px;
-    }
+    h3 { font-size: 23px;}
 
-    .h3_footer {
-        font-size: 23px;
-    }
+    .p_footer { font-size: 20px;}
 
-    .fontes {
-        font-size: 18px;
-    }
+    .h3_footer { font-size: 23px;}
 
-    label{
-        font-size: 20px;
-    }
+    .fontes { font-size: 18px;}
 
-    .botao_enviar{
-        font-size:18px;
-    }
+    label{ font-size: 20px;}
 
-    img {
-        width: 80vmin;
-    }
+    .botao_enviar{ font-size:18px;}
 
-    .foto_autora {
-        width: 45%;
-    }
+    img { width: 80vmin;}
 
-    .img_reputacao {
-        width: 40%;
-    }
+    .foto_autora { width: 45%;}
 
-    .botao_voltar {
-        font-size: 20px;
-    }
+    .img_reputacao { width: 40%;}
+
+    .botao_voltar { font-size: 20px;}
 
     select {
         font-size: 15px;
         margin: 10px;
     }
 
-    option {
-        font-size: 15px;
-    }
+    option { font-size: 15px;}
 
     button {
         font-size: 17px;
         padding: 5px;
     }
 
-    label {
-        font-size: 20px;
+    label { font-size: 20px;}
+
+    .form_avaliacao { padding: 20px;}
+
+    input { font-size: 15px;}
+
+    .relatos-comentarios { padding: 20px;}
+
+    .legenda { font-size: 15px;}
+
+    .cor {
+        width: 17px;
+        height: 17px;
     }
 
-    .form_avaliacao {
-        padding: 20px;
+    .grafico {
+        height: 30px;
+        margin: 10px;
     }
 
-    input {
+    .confirmar {
         font-size: 15px;
+        padding: 6px;
     }
 
-    .relatos-comentarios {
-        padding: 20px;
+    .selecione{font-size: 18px;}
+
+    .item-legenda {
+        gap: 5px;
+        margin: 5px;
+        margin-left: 40px;
+    }
+
+    .container-legenda { 
+        display:contents;
     }
 }

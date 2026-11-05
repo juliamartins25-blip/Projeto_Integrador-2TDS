@@ -51,7 +51,7 @@
         <section>
             <form id="form-acreditou">
                 <label for="acreditou">Você já caiu em uma fake news?</label>
-                <select id="acreditou" required style="font-size: 22px;">
+                <select id="acreditou" required class="selecione">
                     <option value="">Selecione</option>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
@@ -69,12 +69,14 @@
                 </article>
 
                 <!--legenda-->
-                <article style="display:flex; gap: 40px; margin:30px;">
-                    <div style="display: flex; gap: 10px;">
-                        <div class="cor sim"></div><p style="margin:0;" class="legenda" >Sim</p>
+                <article class="container-legenda">
+                    <div class="item-legenda">
+                        <div class="cor sim"></div>
+                        <p style="margin:0;" class="legenda">Sim</p>
                     </div>
-                    <div style="display: flex; gap: 10px;">
-                        <div class="cor nao"></div><p style="margin:0;" class="legenda" >Não</p>
+                    <div class="item-legenda">
+                        <div class="cor nao"></div>
+                        <p style="margin:0;" class="legenda">Não</p>
                     </div>  
                 </article>
             </section>
@@ -83,7 +85,7 @@
         <section>
             <form id="form-tema">
                 <label for="tema">Se sim, qual foi o tema abordado?</label>
-                <select id="tema" required style="font-size: 22px;">
+                <select id="tema" required class="selecione">
                     <option value="">Selecione</option>
                     <option value="saude">Saúde/Vacinas</option>
                     <option value="politica">Política/Eleições</option>
@@ -110,35 +112,42 @@
                     </div>
                     <p id="total-votos-tema">0</p>
                 </article>
-
-                <article class="legenda" style="display:flex; gap: 40px; margin:30px;">
+                <!--legenda-->
+                <article class="container-legenda">
                     <div>
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor saude"></div><p style="margin:0;" class="legenda" >Saúde</p>
+                        <div class="item-legenda">
+                            <div class="cor saude"></div>
+                            <p style="margin:0;" class="legenda" >Saúde</p>
                         </div>
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor politica"></div><p style="margin:0;" class="legenda" >Política</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor ciencia"></div><p style="margin:0;" class="legenda" >Ciência</p>
-                        </div> 
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor celebridades"></div><p style="margin:0;" class="legenda" >Celebridades</p>
+                        <div class="item-legenda">
+                            <div class="cor politica"></div>
+                            <p style="margin:0;" class="legenda" >Política</p>
                         </div>
                     </div>
                     <div>
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor seguranca"></div><p style="margin:0;" class="legenda" >Segurança</p>
+                        <div class="item-legenda">
+                            <div class="cor ciencia"></div>
+                            <p style="margin:0;" class="legenda" >Ciência</p>
                         </div> 
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor economia"></div><p style="margin:0;" class="legenda" >Economia</p>
+                        <div class="item-legenda">
+                            <div class="cor celebridades"></div>
+                            <p style="margin:0;" class="legenda" >Celebridades</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="item-legenda">
+                            <div class="cor seguranca"></div>
+                            <p style="margin:0;" class="legenda" >Segurança</p>
+                        </div> 
+                        <div class="item-legenda">
+                            <div class="cor economia"></div>
+                            <p style="margin:0;" class="legenda" >Economia</p>
                         </div> 
                     </div>
                     <div>
-                        <div style="display: flex; gap: 10px;">
-                            <div class="cor outro"></div><p style="margin:0;" class="legenda" >Outro</p>
+                        <div class="item-legenda">
+                            <div class="cor outro"></div>
+                            <p style="margin:0;" class="legenda" >Outro</p>
                         </div>
                     </div>
                 </article>
