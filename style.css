@@ -64,6 +64,7 @@ p {
     font-size: 30px;
     text-align: justify;
     color:rgb(60, 62, 75);
+    text-indent: 40px;
 }
 
 mark {background-color: aquamarine;}
