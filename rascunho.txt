@@ -1,3 +1,5 @@
-    *conteudo quantitativo*
---> formulario de relatos
-tabela em formato de linha horizontal, com os valores em cores diferentes, e uma legenda em baixo explicando cada cor.
+    *botão lupa*
+clicar no botão - evento click
+classe aplicada em algo
+classe .ativo aplicada em id texto
+id="texto"

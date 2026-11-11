@@ -13,9 +13,9 @@ header {
     background: linear-gradient(to right, rgb(35, 96, 177), rgb(35, 177, 177));
 }
 
-.titulo {font-size: 50px;}
+.titulo {font-size: 40px;}
 
-.tema {font-size: 40px;}
+.tema {font-size: 50px;}
 
 .nome_pagina {
     margin-left: 30px;
@@ -311,6 +311,25 @@ textarea {
 .nav_mudar_rosa { background-color:rgb(75, 14, 75);}
 
 .nav_mudar_rosa a:hover { background-color:rgb(155, 24, 122);}
+
+/* letra grande botão*/
+.letra_grande{
+    background: none;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.letra_grande:hover {
+    font-size: 26px;
+}
+
+.lupa-ativo {
+    font-size: 40px;
+}
+
+.botao-lupa-ativo {
+    background-color: aqua;
+}
 
 /*tela menor*/
 @media (max-width: 900px) {
