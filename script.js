@@ -1,6 +1,3 @@
-//aviso de atualização
-alert("ATENÇÃO! \n Novas atualuzações foram feitas no site. Algumas funcionalidades pode não funcionar");
-
 // voltar ao topo
 const botao_voltar = document.querySelector("#btn-topo");
 
