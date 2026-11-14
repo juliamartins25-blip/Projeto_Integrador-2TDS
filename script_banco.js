@@ -11,5 +11,34 @@ async function salvarVoto (opcao) {
 
     if (error) {
         console.error('erro ao votar:', error.mensage);
-    } //else
+    } else {
+        alert("Voto registrado com sucesso!");
+    }
+}
+
+// ler e exibir comentario
+async function enviarComentario(texto) {
+  const { data, error } = await supabaseClient
+    .from('comentarios')
+    .insert([{mensagem: texto }]);
+
+  if (error) {
+    console.error('Erro ao enviar comentário:', error.message);
+  } else {
+    alert('Comentário enviado!');
+  }
+}
+
+// Busca todos os comentários já salvos no Supabase
+async function buscarComentariosDoBanco() {
+  const { data, error } = await supabaseClient
+    .from('comentarios')
+    .select('mensagem')
+    .order('id', { ascending: false });
+
+  if (error) {
+    console.error('Erro ao buscar comentários:', error.message);
+    return [];
+  }
+  return data;
 }

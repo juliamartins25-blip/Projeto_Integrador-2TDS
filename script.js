@@ -29,6 +29,8 @@ formComentario.addEventListener("submit", function(evento) {
     evento.preventDefault();
 
     const comentario = document.querySelector("#comentario").value;
+ 
+    enviarComentario(comentario);
 
     //cria elemento no espaço
     const novoComentario = document.createElement('div');
@@ -37,14 +39,18 @@ formComentario.addEventListener("submit", function(evento) {
     novoComentario.style.padding = "10px";
     novoComentario.style.marginBottom = "10px";
 
-    novoComentario.innerHTML = `<p>${comentario}</p>`;
+    const paragrafo = document.createElement('p');
+    paragrafo.textContent = comentario;
+    novoComentario.appendChild(paragrafo);
 
     espacoComentario.appendChild(novoComentario);
     formComentario.reset();
+
     //mensagem concluido
     const mensagemConcluido = document.querySelector("#mensagem-sucesso-c");
     mensagemConcluido.classList.add("ativo");
     setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
+
     //remove mensagem de espera
     const mensagem = document.querySelector("#mensagem");
     mensagem.textContent = "";
@@ -52,7 +58,10 @@ formComentario.addEventListener("submit", function(evento) {
 
     //ver resultado ao clicar no botao ver mais
 const verComentario = document.querySelector("#ver-comentario");
+
 verComentario.addEventListener("click", function( ){
+    buscarComentariosDoBanco();
+
     espacoComentario.classList.toggle("ver-espaco");
     verComentario.classList.toggle("ver-ligado");
 });
