@@ -219,7 +219,6 @@ function atualizarGraficoTema (){
 // busca todos os votos de tema
 async function carregaDadosTema() {
     const votos = await buscarVotosTema();
-    console.log("Dados que vieram do banco (Temas):", votos);
     
     //zera contadores
     totalSaude = 0;
@@ -241,7 +240,7 @@ async function carregaDadosTema() {
         else if(item.opcao_escolhida === 'outro') totalOutro++;
     });
 
-    atualizarGrafico();
+    atualizarGraficoTema();
 }
 //atualiza grafico com resposta
 const formTema = document.querySelector("#form-tema");
