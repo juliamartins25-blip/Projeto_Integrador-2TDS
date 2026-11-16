@@ -3,3 +3,16 @@ clicar no botão - evento click
 classe aplicada em algo
 classe .ativo aplicada em id texto
 id="texto"
+
+//Salvar um voto na enquete
+async function salvarVoto (opcao) {
+    const{data, error} = await supabaseClient
+        .from('enquete_acreditou')
+        .insert([{ opcao_escolhida: opcao}]);
+
+    if (error) {
+        console.error('erro ao votar:', error.mensage);
+    } else {
+        alert("Voto registrado com sucesso!");
+    }
+}

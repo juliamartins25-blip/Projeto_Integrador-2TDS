@@ -113,6 +113,7 @@ let totalVotacao = 0;
 //função que gera grafico
 function atualizarGrafico(){
     const total = totalSim + totalNao;
+    if (total === 0) return;
 
     //calculo da porcentagem
     const pctSim = (totalSim / total) * 100;
@@ -121,30 +122,55 @@ function atualizarGrafico(){
     //atualização da largura das fatias
     document.querySelector("#fatia-sim").style.width = pctSim + '%';
     document.querySelector("#fatia-nao").style.width = pctNao + '%';
-
     document.querySelector("#porcentagem-sim").textContent = Math.round(pctSim) + '%';
     document.querySelector("#porcentagem-nao").textContent = Math.round(pctNao) + '%';
-
-    //mostrar total de votos
     document.querySelector("#total-votos").textContent = `${totalVotacao}`;
 }
+
+// busca todo os votos
+async function carregarDadosAcreditou() {
+    const votos = await buscarVotosAcreditou();
+
+    //zera os contadores
+    totalSim = 0;
+    totalNao = 0;
+    totalVotacao = votos.length;
+
+    votos.forEach(item => {
+        if (item.opcao_escolhida === 'sim') {
+            totalSim++;
+        } else if (item.opcao_escolhida === 'nao') {
+            totalNao++;
+        }
+    });
+
+    atualizarGrafico();
+}
+
 //atualiza grafico com resposta
 const formAcreditou = document.querySelector("#form-acreditou");
 
-formAcreditou.addEventListener("submit", function(evento) {
-    evento.preventDefault();
-    totalVotacao++;
-    const acreditou = document.querySelector("#acreditou").value;
-    //verificação: sim ou não
-    if (acreditou === 'sim') {
-        totalSim++;
-    } else if (acreditou === 'nao') {
-        totalNao++;
-    }
+if (formAcreditou){
+    formAcreditou.addEventListener("submit", async function(evento) {
+        evento.preventDefault();
 
-    atualizarGrafico();
-    formAcreditou.reset();
-})
+        const acreditou = document.querySelector("#acreditou").value;
+        if (!acreditou) return;
+
+        //salvar no supabase
+        const salvou = await salvarVotoAcreditou(acreditou);
+        if(!salvou) {
+            alert("Erro ao registrar seu voto. Tente novamente.");
+            return;
+        }
+
+        //carrega dados
+        await carregarDadosAcreditou();
+        formAcreditou.reset();
+    });
+
+    carregarDadosAcreditou();
+}
 
     // qual foi o tema?
 let totalSaude = 0;
@@ -154,11 +180,11 @@ let totalCelebridades = 0;
 let totalSeguranca = 0;
 let totalEconomia = 0;
 let totalOutro = 0;
-
 let totalVotacaoTema = 0;
 //cria grafico
 function atualizarGraficoTema (){
     const total = totalSaude + totalPolitica + totalCiencia + totalCelebridades + totalSeguranca + totalEconomia + totalOutro;
+    if (total === 0) return;
 
     // calculo porcentagem
     const pctSaude = (totalSaude / total) * 100;
@@ -189,34 +215,58 @@ function atualizarGraficoTema (){
     //mostrar total de votos
     document.querySelector("#total-votos-tema").textContent = `${totalVotacaoTema}`;
 }
+
+// busca todos os votos de tema
+async function carregaDadosTema() {
+    const votos = await buscarVotosTema();
+    console.log("Dados que vieram do banco (Temas):", votos);
+    
+    //zera contadores
+    totalSaude = 0;
+    totalPolitica = 0;
+    totalCiencia = 0;
+    totalCelebridades = 0;
+    totalSeguranca = 0;
+    totalEconomia = 0;
+    totalOutro = 0;
+    totalVotacaoTema = votos.length;
+
+    votos.forEach(item => {
+        if(item.opcao_escolhida === 'saude') totalSaude++;
+        else if(item.opcao_escolhida === 'politica') totalPolitica++;
+        else if(item.opcao_escolhida === 'ciencia') totalCiencia++;
+        else if(item.opcao_escolhida === 'celebridade') totalCelebridades++;
+        else if(item.opcao_escolhida === 'seguranca') totalSeguranca++;
+        else if(item.opcao_escolhida === 'economia') totalEconomia++;
+        else if(item.opcao_escolhida === 'outro') totalOutro++;
+    });
+
+    atualizarGrafico();
+}
 //atualiza grafico com resposta
 const formTema = document.querySelector("#form-tema");
+if (formTema) {
+    formTema.addEventListener("submit", async function(evento){
+        evento.preventDefault();
 
-formTema.addEventListener("submit", function(evento){
-    evento.preventDefault();
+        totalVotacaoTema++;
+        const tema = document.querySelector("#tema").value;
+        if (!tema) return;
 
-    totalVotacaoTema++;
-    const tema = document.querySelector("#tema").value;
+        //salva no supabase
+        const salvou = await salvarVotoTema(tema);
+        if(!salvou) {
+            alert("Erro ao registra o tema. Tente novamenete.");
+            return;
+        }
 
-    if (tema === 'saude') {
-        totalSaude++;
-    } else if (tema === 'politica') {
-        totalPolitica++;
-    } else if (tema === 'ciencia') {
-        totalCiencia++;
-    } else if (tema === 'celebridade') {
-        totalCelebridades++;
-    } else if(tema === 'seguranca') {
-        totalSeguranca++;
-    } else if (tema === 'economia') {
-        totalEconomia++;
-    } else if (tema === 'outro') {
-        totalOutro++;
-    };
+        //recarrega os dados
+        await carregaDadosTema();
+        formTema.reset();
+    });
 
-    atualizarGraficoTema();
-    formTema.reset();
-});
+    carregaDadosTema();
+}
 
 // --> formulario de avaliação
     //marcar estrela
@@ -239,7 +289,7 @@ estrelas.forEach(function(estrela) {
     });
 });
 
-    // verifica o clic no botão enviar
+    // verifica o click no botão enviar
 const btnEnviar = document.querySelector("#btn-enviar");
 const espacoAvaliacao = document.querySelector("#espaco-avaliacoes");
 
