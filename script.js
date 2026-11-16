@@ -43,9 +43,9 @@ function criarCardComentario(texto){
 
     // carrega os comentario do banco
 async function carregarComentarios(){
-    const listaComentario = await buscarComentariosDoBanco();
+    const listaComentarios = await buscarComentariosDoBanco();
 
-    if (listaComentario.length > 0) {
+    if (listaComentarios.length > 0) {
         if (mensagemEspera) mensagemEspera.style.display = "none";
 
         espacoComentario.querySelectorAll('div').forEach(div => div.remove());
