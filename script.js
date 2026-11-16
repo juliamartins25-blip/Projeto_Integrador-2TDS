@@ -26,7 +26,7 @@ const formComentario = document.querySelector("#form-comentarios");
 const espacoComentario = document.querySelector("#espaco-para-comentarios");
 const mensagemEspera = document.querySelector("#mensagem");
 
-//função para criar um card de comentario
+    //função para criar um card de comentario
 function criarCardComentario(texto){
     const novoComentario = document.createElement('div');
     novoComentario.style.border = "1px solid #ccc";
@@ -41,7 +41,7 @@ function criarCardComentario(texto){
     return novoComentario;
 }
 
-// carrega os comentario do banco
+    // carrega os comentario do banco
 async function carregarComentarios(){
     const listaComentario = await buscarComentariosDoBanco();
 
@@ -57,7 +57,7 @@ async function carregarComentarios(){
     }
 }
 
-// envia formulario
+    // envia formulario
 formComentario.addEventListener("submit", async function(evento){
     evento.preventDefault();
 
@@ -218,7 +218,7 @@ formTema.addEventListener("submit", function(evento){
     formTema.reset();
 });
 
-// formulario de avaliação
+// --> formulario de avaliação
     //marcar estrela
 const estrelas = document.querySelectorAll(".estrela");
 let notaSelecionada = 0;
