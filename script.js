@@ -1,4 +1,4 @@
-// voltar ao topo
+// --> voltar ao topo
 const botao_voltar = document.querySelector("#btn-topo");
 
 function voltarAoTopo() {
@@ -21,18 +21,13 @@ window.onscroll = function() {
     }
 };
 
-// formulario comentario
+// --> formulario comentario
 const formComentario = document.querySelector("#form-comentarios");
 const espacoComentario = document.querySelector("#espaco-para-comentarios");
+const mensagemEspera = document.querySelector("#mensagem");
 
-formComentario.addEventListener("submit", function(evento) {
-    evento.preventDefault();
-
-    const comentario = document.querySelector("#comentario").value;
- 
-    enviarComentario(comentario);
-
-    //cria elemento no espaço
+//função para criar um card de comentario
+function criarCardComentario(texto){
     const novoComentario = document.createElement('div');
     novoComentario.style.border = "1px solid #ccc";
     novoComentario.style.borderRadius = "5px";
@@ -40,33 +35,76 @@ formComentario.addEventListener("submit", function(evento) {
     novoComentario.style.marginBottom = "10px";
 
     const paragrafo = document.createElement('p');
-    paragrafo.textContent = comentario;
+    paragrafo.textContent = texto;
     novoComentario.appendChild(paragrafo);
 
-    espacoComentario.appendChild(novoComentario);
+    return novoComentario;
+}
+
+// carrega os comentario do banco
+async function carregarComentarios(){
+    const listaComentario = await buscarComentariosDoBanco();
+
+    if (listaComentario.length > 0) {
+        if (mensagemEspera) mensagemEspera.style.display = "none";
+
+        espacoComentario.querySelectorAll('div').forEach(div => div.remove());
+
+        listaComentarios.forEach(item => {
+            const card = criarCardComentario(item.mensagem);
+            espacoComentario.appendChild(card);
+        });
+    }
+}
+
+// envia formulario
+formComentario.addEventListener("submit", async function(evento){
+    evento.preventDefault();
+
+    const comentario = document.querySelector("#comentario").value.trim();
+    if (!comentario) return;
+
+    //salva no supabase antes de atualizar a tela
+    const salvou = await salvarComentarioNoBanco(comentario);
+
+    if (!salvou) {
+        alert("Não foi possível enviar o comentário. Verifique sua conexão.");
+        return;
+    }
+
+    //cria um elemento no espaço
+    const novoComentario = criarCardComentario(comentario);
+    espacoComentario.prepend(novoComentario);
+
     formComentario.reset();
 
-    //mensagem concluido
+    //mensagem comcluido
     const mensagemConcluido = document.querySelector("#mensagem-sucesso-c");
     mensagemConcluido.classList.add("ativo");
-    setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
+    setTimeout(function() {
+        mensagemConcluido.classList.remove("ativo");
+    }, 3000);
 
-    //remove mensagem de espera
-    const mensagem = document.querySelector("#mensagem");
-    mensagem.textContent = "";
+    //esconde mensagem de espera
+    if (mensagemEspera) {
+        mensagemEspera.style.display = "none";
+    }
+
 });
 
     //ver resultado ao clicar no botao ver mais
 const verComentario = document.querySelector("#ver-comentario");
 
 verComentario.addEventListener("click", function( ){
-    buscarComentariosDoBanco();
-
     espacoComentario.classList.toggle("ver-espaco");
     verComentario.classList.toggle("ver-ligado");
 });
 
-// formulario de relatos
+    // Executa o carregamento inicial
+carregarComentarios();
+
+
+// --> formulario de relatos
     //já caiu em uma fake news?
 let totalSim = 0;
 let totalNao = 0;

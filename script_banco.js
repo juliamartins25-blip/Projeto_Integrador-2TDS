@@ -29,6 +29,19 @@ async function enviarComentario(texto) {
   }
 }
 
+//salva o comentario no banco
+async function salvarComentarioNoBanco(texto) {
+  const { error } = await supabaseClient
+    .from('comentarios')
+    .insert([{ mensagem: texto }]);
+
+  if (error) {
+    console.error('Erro ao salvar comentário:', error.message);
+    return false;
+  }
+  return true;
+}
+
 // Busca todos os comentários já salvos no Supabase
 async function buscarComentariosDoBanco() {
   const { data, error } = await supabaseClient

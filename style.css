@@ -312,25 +312,6 @@ textarea {
 
 .nav_mudar_rosa a:hover { background-color:rgb(155, 24, 122);}
 
-/* letra grande botão*/
-.letra_grande{
-    background: none;
-    padding: 4px;
-    border: 1px solid black;
-}
-
-.letra_grande:hover {
-    font-size: 26px;
-}
-
-.lupa-ativo {
-    font-size: 40px;
-}
-
-.botao-lupa-ativo {
-    background-color: aqua;
-}
-
 /*tela menor*/
 @media (max-width: 900px) {
     main { padding: 20px;}
