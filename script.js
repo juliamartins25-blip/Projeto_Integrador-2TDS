@@ -301,7 +301,7 @@ function criarCardAvaliacao(nota, texto) {
     novaAvaliacao.style.marginBottom = "10px";
 
     const pNota = document.createElement('p');
-    pNota.textContent = 'Nota: ${nota}';
+    pNota.textContent = `Nota: ${nota}`;
 
     const pTexto = document.createElement('p');
     pTexto.textContent = texto;
@@ -321,14 +321,14 @@ async function carregarAvaliacoes() {
         espacoAvaliacao.querySelectorAll('div').forEach(div => div.remove());
 
         listaAvaliacoes.forEach(item => {
-            const card = criarCardAvaliacao(item.nota, item.texto);
+            const card = criarCardAvaliacao(item.estrelas, item.mensagem);
             espacoAvaliacao.appendChild(card);
         });
     }
 }
 
     // verifica o click no botão enviar
-btnEnviar.addEventListener("click", function() {
+btnEnviar.addEventListener("click", async function() {
     const textoAvaliacao = document.querySelector("#texto-avaliacao").value;
 
     // verifica se está vazio
@@ -340,38 +340,44 @@ btnEnviar.addEventListener("click", function() {
     } else {
         mensagemErro.classList.remove("mensagem-erro-ativa");
     };
-}); //parou aqui
-/*
-   
-    
-    //insere a resposta no espaço
-    
-    novaAvaliacao.innerHTML = `
-        <p>Nota: ${notaSelecionada}</p>
-        <p>${textoAvaliacao}</p>
-    `;
-    espacoAvaliacao.appendChild(novaAvaliacao);
 
-    //reseta o formulario
+    //salvar no supabase
+    const salvou = await salvarAvaliacaoNoBanco(notaSelecionada, textoAvaliacao);
+    if (!salvou) {
+        alert("Erro ao enviar avaliação. Verifique sua conexão.");
+        return;
+    }
+
+    //inserir resposta no topo da lista
+    const novaAvaliacao = criarCardAvaliacao(notaSelecionada, textoAvaliacao);
+    espacoAvaliacao.prepend(novaAvaliacao);
+
+    //reseta frmulario
     document.querySelector("#texto-avaliacao").value = "";
     notaSelecionada = 0;
     estrelas.forEach(function(item) {
         item.classList.remove("ativa");
-    })
-    
+    });
+
     // mensagem de concluido
     const mensagemConcluido = document.querySelector("#mensagem-sucesso-a");
     mensagemConcluido.classList.add("ativo");
-    setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
+    setTimeout(function() {
+        mensagemConcluido.classList.remove("ativo");
+    }, 3000);
 
-    // remove mensagem de espera
-    
-    mensagem.textContent = "";
+    //esconde mensagem de espera
+    if(mensagemEsperaAv) {
+        mensagemEsperaAv.style.display = 'none';
+    }
+    //carrega avaliações
+    carregarAvaliacoes();
 });
 
-    // botão ver mais
+
+// botão ver mais
 const btnVer = document.querySelector("#ver");
 btnVer.addEventListener("click", function(){
     espacoAvaliacao.classList.toggle("ver-espaco");
     btnVer.classList.toggle("ver-ligado");
-});*/
+});

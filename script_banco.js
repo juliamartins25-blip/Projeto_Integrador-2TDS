@@ -83,10 +83,10 @@ async function buscarVotosTema() {
 }
 
 // --> formulario de avaliação
-async function salvarAvaliacaoNoBanco(texto, estrelas) {
+async function salvarAvaliacaoNoBanco(estrelas, texto) {
   const {error} = await supabaseClient
   .from('avaliacao')
-  .select([{estrelas: estrelas, texto: texto}]);
+  .insert([{estrelas: estrelas, mensagem: texto}]);
 
   if (error) {
     console.error('Erro ao salvar avaliação:', error.mensage);
@@ -96,9 +96,9 @@ async function salvarAvaliacaoNoBanco(texto, estrelas) {
 }
 
 async function buscarAvaliacoes() {
-  const {error} = await supabaseClient
-  .from('avaliacoes')
-  .select('estrelas, texto')
+  const {data, error} = await supabaseClient
+  .from('avaliacao')
+  .select('estrelas, mensagem')
   .order('id', { ascending: false });
 
   if (error) {
