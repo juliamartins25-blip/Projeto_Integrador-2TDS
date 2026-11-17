@@ -370,10 +370,10 @@ btnEnviar.addEventListener("click", async function() {
     if(mensagemEsperaAv) {
         mensagemEsperaAv.style.display = 'none';
     }
-    //carrega avaliações
-    carregarAvaliacoes();
-});
 
+});
+//carrega avaliações
+carregarAvaliacoes();
 
 // botão ver mais
 const btnVer = document.querySelector("#ver");
