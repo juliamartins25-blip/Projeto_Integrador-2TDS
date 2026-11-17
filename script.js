@@ -64,7 +64,7 @@ formComentario.addEventListener("submit", async function(evento){
     const comentario = document.querySelector("#comentario").value.trim();
     if (!comentario) return;
 
-    //salva no supabase antes de atualizar a tela
+    //salva no supabase
     const salvou = await salvarComentarioNoBanco(comentario);
 
     if (!salvou) {
@@ -288,10 +288,46 @@ estrelas.forEach(function(estrela) {
     });
 });
 
-    // verifica o click no botão enviar
 const btnEnviar = document.querySelector("#btn-enviar");
 const espacoAvaliacao = document.querySelector("#espaco-avaliacoes");
+const mensagemEsperaAv = document.querySelector("#mensagem2");
 
+// desenhar card
+function criarCardAvaliacao(nota, texto) {
+    const novaAvaliacao = document.createElement('div');
+    novaAvaliacao.style.border = "1px solid #ccc";
+    novaAvaliacao.style.borderRadius = "8px";
+    novaAvaliacao.style.padding = "20px";
+    novaAvaliacao.style.marginBottom = "10px";
+
+    const pNota = document.createElement('p');
+    pNota.textContent = 'Nota: ${nota}';
+
+    const pTexto = document.createElement('p');
+    pTexto.textContent = texto;
+
+    novaAvaliacao.appendChild(pNota);
+    novaAvaliacao.appendChild(pTexto);
+
+    return novaAvaliacao;
+}
+
+async function carregarAvaliacoes() {
+    const listaAvaliacoes = await buscarAvaliacoes();
+
+    if (listaAvaliacoes.length > 0) {
+        if(mensagemEsperaAv) mensagemEsperaAv.style.display = 'none';
+
+        espacoAvaliacao.querySelectorAll('div').forEach(div => div.remove());
+
+        listaAvaliacoes.forEach(item => {
+            const card = criarCardAvaliacao(item.nota, item.texto);
+            espacoAvaliacao.appendChild(card);
+        });
+    }
+}
+
+    // verifica o click no botão enviar
 btnEnviar.addEventListener("click", function() {
     const textoAvaliacao = document.querySelector("#texto-avaliacao").value;
 
@@ -304,19 +340,16 @@ btnEnviar.addEventListener("click", function() {
     } else {
         mensagemErro.classList.remove("mensagem-erro-ativa");
     };
+}); //parou aqui
+/*
+   
     
     //insere a resposta no espaço
-    const novaAvaliacao = document.createElement('div');
+    
     novaAvaliacao.innerHTML = `
         <p>Nota: ${notaSelecionada}</p>
         <p>${textoAvaliacao}</p>
     `;
-
-    novaAvaliacao.style.border = "1px solid #ccc";
-    novaAvaliacao.style.borderRadius = "8px";
-    novaAvaliacao.style.padding = "20px";
-    novaAvaliacao.style.marginBottom = "10px";
-
     espacoAvaliacao.appendChild(novaAvaliacao);
 
     //reseta o formulario
@@ -332,7 +365,7 @@ btnEnviar.addEventListener("click", function() {
     setTimeout(function() {mensagemConcluido.classList.remove("ativo");}, 3000);
 
     // remove mensagem de espera
-    const mensagem = document.querySelector("#mensagem2");
+    
     mensagem.textContent = "";
 });
 
@@ -341,4 +374,4 @@ const btnVer = document.querySelector("#ver");
 btnVer.addEventListener("click", function(){
     espacoAvaliacao.classList.toggle("ver-espaco");
     btnVer.classList.toggle("ver-ligado");
-});
+});*/

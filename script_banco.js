@@ -81,3 +81,29 @@ async function buscarVotosTema() {
   }
   return data;
 }
+
+// --> formulario de avaliação
+async function salvarAvaliacaoNoBanco(texto, estrelas) {
+  const {error} = await supabaseClient
+  .from('avaliacao')
+  .select([{estrelas: estrelas, texto: texto}]);
+
+  if (error) {
+    console.error('Erro ao salvar avaliação:', error.mensage);
+    return false;
+  }
+  return true;
+}
+
+async function buscarAvaliacoes() {
+  const {error} = await supabaseClient
+  .from('avaliacoes')
+  .select('estrelas, texto')
+  .order('id', { ascending: false });
+
+  if (error) {
+    console.error('Erro ao buscar avaliações:', error.mensage);
+    return [];
+  }
+  return data;
+}
