@@ -167,7 +167,14 @@ footer {
 .fatia {
     height: 100%;
     transition: widht 0.4s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
 }
+
+.porcentagem {white-space: nowrap;}
 
 .sim { background-color: #32dd3e;}
 .nao { background-color: #fd4545;}
@@ -407,7 +414,10 @@ textarea {
         display:contents;
     }
 
-    .porcentagem {font-size: 15px;}
+    .porcentagem {
+        font-size: 12px;
+        margin:0;
+    }
     
     .linha-estrelas {
         display:contents;
