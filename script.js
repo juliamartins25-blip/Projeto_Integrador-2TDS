@@ -381,3 +381,14 @@ btnVer.addEventListener("click", function(){
     espacoAvaliacao.classList.toggle("ver-espaco");
     btnVer.classList.toggle("ver-ligado");
 });
+
+//atualização automatica em segundo plano
+setInterval(function() {
+    // Atualiza as duas enquetes
+    if (typeof carregarDadosAcreditou === "function") carregarDadosAcreditou();
+    if (typeof carregaDadosTema === "function") carregaDadosTema();
+
+    // Atualiza comentários e avaliações
+    if (typeof carregarComentarios === "function") carregarComentarios();
+    if (typeof carregarAvaliacoes === "function") carregarAvaliacoes();
+}, 5000);
