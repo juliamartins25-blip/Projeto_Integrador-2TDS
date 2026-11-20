@@ -43,6 +43,7 @@ function criarCardComentario(texto){
 
     // carrega os comentario do banco
 async function carregarComentarios(){
+    if (!espacoComentario || typeof buscarComentariosDoBanco !== "function") return;
     const listaComentarios = await buscarComentariosDoBanco();
 
     if (listaComentarios.length > 0) {
@@ -58,51 +59,54 @@ async function carregarComentarios(){
 }
 
     // envia formulario
-formComentario.addEventListener("submit", async function(evento){
-    evento.preventDefault();
+if (formComentario) {
+    formComentario.addEventListener("submit", async function(evento){
+        evento.preventDefault();
 
-    const comentario = document.querySelector("#comentario").value.trim();
-    if (!comentario) return;
+        const comentario = document.querySelector("#comentario").value.trim();
+        if (!comentario) return;
 
-    //salva no supabase
-    const salvou = await salvarComentarioNoBanco(comentario);
+        //salva no supabase
+        const salvou = await salvarComentarioNoBanco(comentario);
 
-    if (!salvou) {
-        alert("Não foi possível enviar o comentário. Verifique sua conexão.");
-        return;
-    }
+        if (!salvou) {
+            alert("Não foi possível enviar o comentário. Verifique sua conexão.");
+            return;
+        }
 
-    //cria um elemento no espaço
-    const novoComentario = criarCardComentario(comentario);
-    espacoComentario.prepend(novoComentario);
+        //cria um elemento no espaço
+        const novoComentario = criarCardComentario(comentario);
+        espacoComentario.prepend(novoComentario);
 
-    formComentario.reset();
+        formComentario.reset();
 
-    //mensagem comcluido
-    const mensagemConcluido = document.querySelector("#mensagem-sucesso-c");
-    mensagemConcluido.classList.add("ativo");
-    setTimeout(function() {
-        mensagemConcluido.classList.remove("ativo");
-    }, 3000);
+        //mensagem comcluido
+        const mensagemConcluido = document.querySelector("#mensagem-sucesso-c");
+        mensagemConcluido.classList.add("ativo");
+        setTimeout(function() {
+            mensagemConcluido.classList.remove("ativo");
+        }, 3000);
 
-    //esconde mensagem de espera
-    if (mensagemEspera) {
-        mensagemEspera.style.display = "none";
-    }
+        //esconde mensagem de espera
+        if (mensagemEspera) {
+            mensagemEspera.style.display = "none";
+        }
+    });
 
-});
 
     //ver resultado ao clicar no botao ver mais
-const verComentario = document.querySelector("#ver-comentario");
+    const verComentario = document.querySelector("#ver-comentario");
 
-verComentario.addEventListener("click", function( ){
-    espacoComentario.classList.toggle("ver-espaco");
-    verComentario.classList.toggle("ver-ligado");
-});
+    if (verComentario) {
+        verComentario.addEventListener("click", function( ){
+            espacoComentario.classList.toggle("ver-espaco");
+            verComentario.classList.toggle("ver-ligado");
+        });
+    }
 
     // Executa o carregamento inicial
-carregarComentarios();
-
+    carregarComentarios();
+}
 
 // --> formulario de relatos
     //já caiu em uma fake news?
@@ -313,6 +317,7 @@ function criarCardAvaliacao(nota, texto) {
 }
 
 async function carregarAvaliacoes() {
+    if (!espacoAvaliacao || typeof buscarAvaliacoes !== "function") return;
     const listaAvaliacoes = await buscarAvaliacoes();
 
     if (listaAvaliacoes.length > 0) {
@@ -328,67 +333,72 @@ async function carregarAvaliacoes() {
 }
 
     // verifica o click no botão enviar
-btnEnviar.addEventListener("click", async function() {
-    const textoAvaliacao = document.querySelector("#texto-avaliacao").value;
+if (btnEnviar) {
+    btnEnviar.addEventListener("click", async function() {
+        const textoAvaliacao = document.querySelector("#texto-avaliacao").value;
 
-    // verifica se está vazio
-    const mensagemErro = document.querySelector("#mensagem-erro");
-    if (textoAvaliacao === "" || notaSelecionada === 0) {
-        mensagemErro.classList.add("mensagem-erro-ativa");
-        setTimeout(function(){mensagemErro.classList.remove("mensagem-erro-ativa");}, 3000);
-        return;
-    } else {
-        mensagemErro.classList.remove("mensagem-erro-ativa");
-    };
+        // verifica se está vazio
+        const mensagemErro = document.querySelector("#mensagem-erro");
+        if (textoAvaliacao === "" || notaSelecionada === 0) {
+            mensagemErro.classList.add("mensagem-erro-ativa");
+            setTimeout(function(){mensagemErro.classList.remove("mensagem-erro-ativa");}, 3000);
+            return;
+        } else {
+            mensagemErro.classList.remove("mensagem-erro-ativa");
+        };
 
-    //salvar no supabase
-    const salvou = await salvarAvaliacaoNoBanco(notaSelecionada, textoAvaliacao);
-    if (!salvou) {
-        alert("Erro ao enviar avaliação. Verifique sua conexão.");
-        return;
-    }
+        //salvar no supabase
+        const salvou = await salvarAvaliacaoNoBanco(notaSelecionada, textoAvaliacao);
+        if (!salvou) {
+            alert("Erro ao enviar avaliação. Verifique sua conexão.");
+            return;
+        }
 
-    //inserir resposta no topo da lista
-    const novaAvaliacao = criarCardAvaliacao(notaSelecionada, textoAvaliacao);
-    espacoAvaliacao.prepend(novaAvaliacao);
+        //inserir resposta no topo da lista
+        const novaAvaliacao = criarCardAvaliacao(notaSelecionada, textoAvaliacao);
+        espacoAvaliacao.prepend(novaAvaliacao);
 
-    //reseta frmulario
-    document.querySelector("#texto-avaliacao").value = "";
-    notaSelecionada = 0;
-    estrelas.forEach(function(item) {
-        item.classList.remove("ativa");
+        //reseta frmulario
+        document.querySelector("#texto-avaliacao").value = "";
+        notaSelecionada = 0;
+        estrelas.forEach(function(item) {
+            item.classList.remove("ativa");
+        });
+
+        // mensagem de concluido
+        const mensagemConcluido = document.querySelector("#mensagem-sucesso-a");
+        mensagemConcluido.classList.add("ativo");
+        setTimeout(function() {
+            mensagemConcluido.classList.remove("ativo");
+        }, 3000);
+
+        //esconde mensagem de espera
+        if(mensagemEsperaAv) {
+            mensagemEsperaAv.style.display = 'none';
+        }
+
     });
 
-    // mensagem de concluido
-    const mensagemConcluido = document.querySelector("#mensagem-sucesso-a");
-    mensagemConcluido.classList.add("ativo");
-    setTimeout(function() {
-        mensagemConcluido.classList.remove("ativo");
-    }, 3000);
-
-    //esconde mensagem de espera
-    if(mensagemEsperaAv) {
-        mensagemEsperaAv.style.display = 'none';
-    }
-
-});
-//carrega avaliações
-carregarAvaliacoes();
+    //carrega avaliações
+    carregarAvaliacoes();
+}
 
 // botão ver mais
 const btnVer = document.querySelector("#ver");
-btnVer.addEventListener("click", function(){
-    espacoAvaliacao.classList.toggle("ver-espaco");
-    btnVer.classList.toggle("ver-ligado");
-});
+if (btnVer) {
+    btnVer.addEventListener("click", function(){
+        espacoAvaliacao.classList.toggle("ver-espaco");
+        btnVer.classList.toggle("ver-ligado");
+    });
+}
 
 //atualização automatica em segundo plano
 setInterval(function() {
     // Atualiza as duas enquetes
-    if (typeof carregarDadosAcreditou === "function") carregarDadosAcreditou();
-    if (typeof carregaDadosTema === "function") carregaDadosTema();
+    if (document.querySelector("#form-acreditou") && typeof carregarDadosAcreditou === "function") carregarDadosAcreditou();
+    if (document.querySelector("#form-tema") && typeof carregaDadosTema === "function") carregaDadosTema();
 
     // Atualiza comentários e avaliações
-    if (typeof carregarComentarios === "function") carregarComentarios();
-    if (typeof carregarAvaliacoes === "function") carregarAvaliacoes();
+    if (formComentario && typeof carregarComentarios === "function") carregarComentarios();
+    if (btnEnviar && typeof carregarAvaliacoes === "function") carregarAvaliacoes();
 }, 5000);
