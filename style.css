@@ -167,11 +167,9 @@ footer {
 .fatia {
     height: 100%;
     transition: widht 0.4s ease;
-
     display: flex;
     align-items: center;
-    justify-content: left;
-    overflow: hidden;
+    justify-content:left;
 }
 
 .porcentagem {white-space: nowrap;}
@@ -187,6 +185,7 @@ footer {
 .selecione{
     font-size: 22px;
     color:rgb(60, 62, 75);
+    margin:10px;
 }
 
     /*legenda*/
@@ -343,7 +342,12 @@ textarea {
 
     h2 { font-size: 25px;}
 
-    .lista_p { font-size: 20px;}
+    .h2_rosa {margin:2px;}
+
+    .lista_p { 
+        font-size: 20px;
+        margin:5px;
+    }
 
     h3 { font-size: 23px;}
 
@@ -359,7 +363,7 @@ textarea {
 
     img { width: 80vmin;}
 
-    .foto_autora { width: 45%;}
+    .foto_autora { width: 200px;}
 
     .img_reputacao { width: 40%;}
 
@@ -370,7 +374,7 @@ textarea {
         margin: 10px;
     }
 
-    option { font-size: 15px;}
+    option { font-size: 10px;}
 
     button {
         font-size: 17px;
@@ -385,7 +389,10 @@ textarea {
 
     .relatos-comentarios { padding: 20px;}
 
-    .legenda { font-size: 15px;}
+    .legenda { 
+        font-size: 15px;
+        text-indent: 0px;
+    }
 
     .cor {
         width: 17px;
@@ -402,7 +409,7 @@ textarea {
         padding: 6px;
     }
 
-    .selecione{font-size: 18px;}
+    .selecione{font-size: 15px;}
 
     .item-legenda {
         gap: 5px;
@@ -410,20 +417,20 @@ textarea {
         margin-left: 40px;
     }
 
-    .container-legenda { 
-        display:contents;
-    }
+    .container-legenda { display:contents;}
 
     .porcentagem {
         font-size: 12px;
-        margin:0;
+        margin: 8px;
+        text-indent:0px;
     }
     
-    .linha-estrelas {
-        display:contents;
-    }
+    .linha-estrelas {display:contents;}
 
-    .span-p {
-        font-size: 20px;
+    .span-p {font-size: 20px;}
+
+    .container_autora {
+        display:inline-block;
+        text-align: center;
     }
 }
